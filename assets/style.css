@@ -1,0 +1,79 @@
+/* PT Karya Adiwangsa Sejahtera — Design System
+   Warna diambil dari logo resmi (gradient biru cyan -> navy indigo).
+   Font: Poppins (body) + Clash Display (heading) -- sudah dipakai di versi lama, dipertahankan
+   utk konsistensi brand, tapi seluruh layout & komponen didesain ulang total. */
+
+:root {
+  --kas-cyan: #38BDF8;
+  --kas-blue: #2563EB;
+  --kas-navy: #0F172A;
+  --kas-navy-2: #1E293B;
+  --kas-indigo: #4338CA;
+  --kas-bg: #F8FAFC;
+  --kas-bg-2: #F1F5F9;
+  --kas-text: #0F172A;
+  --kas-text-muted: #64748B;
+  --kas-accent-epoxy: #F59E0B;
+  --kas-accent-fnb: #EF4444;
+  --kas-accent-it: #38BDF8;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--kas-bg);
+  color: var(--kas-text);
+  font-family: 'Poppins', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+.font-display { font-family: 'Clash Display', 'Poppins', sans-serif; }
+
+.kas-texture {
+  background-image: radial-gradient(rgba(255,255,255,.05) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.kas-gradient-hero {
+  background: linear-gradient(135deg, var(--kas-navy) 0%, var(--kas-navy-2) 55%, var(--kas-indigo) 100%);
+}
+
+.kas-gradient-text {
+  background: linear-gradient(90deg, var(--kas-cyan), var(--kas-blue));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.kas-card {
+  background: white;
+  border-radius: 1.5rem;
+  box-shadow: 0 1px 3px rgba(15,23,42,.06), 0 8px 24px rgba(15,23,42,.06);
+  transition: all .35s ease;
+}
+.kas-card:hover {
+  box-shadow: 0 16px 40px rgba(15,23,42,.12);
+  transform: translateY(-4px);
+}
+
+.kas-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .5rem 1rem;
+  border-radius: 999px;
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+
+@keyframes kasFadeUp {
+  0% { opacity: 0; transform: translateY(18px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.kas-fade-up { animation: kasFadeUp .7s ease both; }
+
+/* Unit-specific accent classes -- dipakai untuk badge/CTA per halaman unit */
+.unit-epoxy { --unit-accent: var(--kas-accent-epoxy); }
+.unit-fnb { --unit-accent: var(--kas-accent-fnb); }
+.unit-it { --unit-accent: var(--kas-accent-it); }
