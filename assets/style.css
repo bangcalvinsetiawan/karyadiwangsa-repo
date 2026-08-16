@@ -1,79 +1,79 @@
-/* PT Karya Adiwangsa Sejahtera — Design System
-   Warna diambil dari logo resmi (gradient biru cyan -> navy indigo).
-   Font: Poppins (body) + Clash Display (heading) -- sudah dipakai di versi lama, dipertahankan
-   utk konsistensi brand, tapi seluruh layout & komponen didesain ulang total. */
+/* PT Karya Adiwangsa Sejahtera — Design System v2
+   Prinsip: HashiCorp-inspired -- monokrom + 1 warna per produk (tidak dicampur),
+   shadow whisper (nyaris tak terlihat), radius tajam, tanpa gradient dekoratif. */
 
 :root {
-  --kas-cyan: #38BDF8;
-  --kas-blue: #2563EB;
-  --kas-navy: #0F172A;
-  --kas-navy-2: #1E293B;
-  --kas-indigo: #4338CA;
-  --kas-bg: #F8FAFC;
-  --kas-bg-2: #F1F5F9;
-  --kas-text: #0F172A;
-  --kas-text-muted: #64748B;
-  --kas-accent-epoxy: #F59E0B;
-  --kas-accent-fnb: #EF4444;
-  --kas-accent-it: #38BDF8;
+  --ink: #0A0A0A;
+  --ink-soft: #3D3D3D;
+  --muted: #6B6B6B;
+  --border: #E4E4E4;
+  --surface: #FFFFFF;
+  --surface-alt: #FAFAF8;
+  --dark: #121212;
+  --dark-soft: #1C1C1C;
+
+  --epoxy: #C2680A;
+  --fnb: #A8291E;
+  --it: #1D4ED8;
 }
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
-  background: var(--kas-bg);
-  color: var(--kas-text);
-  font-family: 'Poppins', sans-serif;
+  background: var(--surface);
+  color: var(--ink);
+  font-family: 'Inter', system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
-.font-display { font-family: 'Clash Display', 'Poppins', sans-serif; }
+.font-display { font-family: 'Fraunces', Georgia, serif; }
 
-.kas-texture {
-  background-image: radial-gradient(rgba(255,255,255,.05) 1px, transparent 1px);
-  background-size: 20px 20px;
-}
-
-.kas-gradient-hero {
-  background: linear-gradient(135deg, var(--kas-navy) 0%, var(--kas-navy-2) 55%, var(--kas-indigo) 100%);
-}
-
-.kas-gradient-text {
-  background: linear-gradient(90deg, var(--kas-cyan), var(--kas-blue));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-.kas-card {
-  background: white;
-  border-radius: 1.5rem;
-  box-shadow: 0 1px 3px rgba(15,23,42,.06), 0 8px 24px rgba(15,23,42,.06);
-  transition: all .35s ease;
-}
-.kas-card:hover {
-  box-shadow: 0 16px 40px rgba(15,23,42,.12);
-  transform: translateY(-4px);
-}
-
-.kas-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: .5rem;
-  padding: .5rem 1rem;
-  border-radius: 999px;
-  font-size: .75rem;
-  font-weight: 700;
-  letter-spacing: .05em;
+.label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
+  color: var(--muted);
 }
 
-@keyframes kasFadeUp {
-  0% { opacity: 0; transform: translateY(18px); }
+.hairline { border-top: 1px solid var(--border); }
+.hairline-b { border-bottom: 1px solid var(--border); }
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  transition: border-color .2s ease;
+}
+.card:hover { border-color: var(--ink); }
+
+.btn-primary {
+  background: var(--ink);
+  color: white;
+  border-radius: 4px;
+  padding: 0.75rem 1.5rem;
+  font-weight: 500;
+  font-size: 0.9375rem;
+  transition: background .15s ease;
+}
+.btn-primary:hover { background: var(--ink-soft); }
+
+.btn-ghost {
+  border: 1px solid var(--border);
+  color: var(--ink);
+  border-radius: 4px;
+  padding: 0.75rem 1.5rem;
+  font-weight: 500;
+  font-size: 0.9375rem;
+  transition: border-color .15s ease;
+}
+.btn-ghost:hover { border-color: var(--ink); }
+
+@keyframes fadeUp {
+  0% { opacity: 0; transform: translateY(12px); }
   100% { opacity: 1; transform: translateY(0); }
 }
-.kas-fade-up { animation: kasFadeUp .7s ease both; }
+.fade-up { animation: fadeUp .5s ease both; }
 
-/* Unit-specific accent classes -- dipakai untuk badge/CTA per halaman unit */
-.unit-epoxy { --unit-accent: var(--kas-accent-epoxy); }
-.unit-fnb { --unit-accent: var(--kas-accent-fnb); }
-.unit-it { --unit-accent: var(--kas-accent-it); }
+.unit-epoxy { --unit: var(--epoxy); }
+.unit-fnb { --unit: var(--fnb); }
+.unit-it { --unit: var(--it); }
