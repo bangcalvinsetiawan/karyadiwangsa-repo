@@ -68,39 +68,62 @@
 
 <!-- Epoxy -->
 <div class="bleed amber" id="epoxy-section">
-  <div class="wrap" style="padding-top:clamp(56px,8vh,90px);padding-bottom:clamp(44px,6vh,70px);text-align:center">
-    <span class="eyebrow">Unit Bisnis — 01</span>
-    <h2 style="margin-top:14px">epoxy flooring</h2>
-    <p class="lede" style="margin:20px auto 0;max-width:32ch">Lantai industrial yang kokoh, rapi, dan tahan lama.</p>
-    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:30px">
-      <a href="epoxy-flooring.html" class="btn solid">jelajahi epoxy flooring</a>
+  <div class="wrap" style="padding-top:clamp(56px,8vh,90px);padding-bottom:clamp(44px,6vh,70px)">
+    <div class="unit-split">
+      <div style="text-align:center">
+        <span class="eyebrow">Unit Bisnis — 01</span>
+        <h2 style="margin-top:14px">epoxy flooring</h2>
+        <p class="lede" style="margin:20px auto 0;max-width:32ch">Lantai industrial yang kokoh, rapi, dan tahan lama.</p>
+        <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:30px">
+          <a href="epoxy-flooring.html" class="btn solid">jelajahi epoxy flooring</a>
+        </div>
+      </div>
+      <img src="assets/construction-worker.jpg" alt="Proses aplikasi epoxy flooring" style="width:100%;border-radius:10px;object-fit:cover;height:clamp(200px,30vh,320px)">
     </div>
   </div>
 </div>
 
 <!-- F&B -->
 <div class="bleed crimson" id="fnb-section">
-  <div class="wrap" style="padding-top:clamp(56px,8vh,90px);padding-bottom:clamp(44px,6vh,70px);text-align:center">
-    <span class="eyebrow">Unit Bisnis — 02</span>
-    <h2 style="margin-top:14px">f&amp;b specialist consultant</h2>
-    <p class="lede" style="margin:20px auto 0;max-width:32ch">Bisnis kuliner yang tertata dari dapur sampai meja kasir.</p>
-    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:30px">
-      <a href="fnb-consulting.html" class="btn solid">jelajahi f&amp;b consulting</a>
+  <div class="wrap" style="padding-top:clamp(56px,8vh,90px);padding-bottom:clamp(44px,6vh,70px)">
+    <div class="unit-split">
+      <img src="assets/fnb-kitchen.jpg" alt="Dapur komersial profesional yang tertata" style="width:100%;border-radius:10px;object-fit:cover;height:clamp(200px,30vh,320px)" class="unit-img-first">
+      <div style="text-align:center">
+        <span class="eyebrow">Unit Bisnis — 02</span>
+        <h2 style="margin-top:14px">f&amp;b specialist consultant</h2>
+        <p class="lede" style="margin:20px auto 0;max-width:32ch">Bisnis kuliner yang tertata dari dapur sampai meja kasir.</p>
+        <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:30px">
+          <a href="fnb-consulting.html" class="btn solid">jelajahi f&amp;b consulting</a>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
 <!-- IT -->
 <div class="bleed sky" id="it-section">
-  <div class="wrap" style="padding-top:clamp(56px,8vh,90px);padding-bottom:clamp(44px,6vh,70px);text-align:center">
-    <span class="eyebrow">Unit Bisnis — 03</span>
-    <h2 style="margin-top:14px">it solution</h2>
-    <p class="lede" style="margin:20px auto 0;max-width:32ch">Digitalisasi & keamanan bisnis dalam satu mitra.</p>
-    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:30px">
-      <a href="it-solution.html" class="btn solid">jelajahi it solution</a>
+  <div class="wrap" style="padding-top:clamp(56px,8vh,90px);padding-bottom:clamp(44px,6vh,70px)">
+    <div class="unit-split">
+      <div style="text-align:center">
+        <span class="eyebrow">Unit Bisnis — 03</span>
+        <h2 style="margin-top:14px">it solution</h2>
+        <p class="lede" style="margin:20px auto 0;max-width:32ch">Digitalisasi & keamanan bisnis dalam satu mitra.</p>
+        <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:30px">
+          <a href="it-solution.html" class="btn solid">jelajahi it solution</a>
+        </div>
+      </div>
+      <img src="assets/it-cctv.jpg" alt="Kamera CCTV terpasang untuk keamanan fasilitas" style="width:100%;border-radius:10px;object-fit:cover;height:clamp(200px,30vh,320px)">
     </div>
   </div>
 </div>
+<style>
+.unit-split { display:grid; gap:32px; grid-template-columns:1fr; align-items:center; }
+@media(min-width:820px){
+  .unit-split { grid-template-columns:1fr 1fr; gap:48px; }
+  .unit-split > div:not(.unit-img-first) { text-align:left !important; }
+  .unit-split .lede, .unit-split div[style*="justify-content:center"] { margin-left:0 !important; justify-content:flex-start !important; }
+}
+</style>
 
 <!-- Stats -->
 <section class="pad" style="background:var(--paper-2)">
