@@ -5,206 +5,239 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="PT Karya Adiwangsa Sejahtera — epoxy flooring industrial, konsultan F&B, dan IT solution (IoT, software, ERP/CRM, hardware keamanan).">
 <title>PT Karya Adiwangsa Sejahtera — Epoxy Flooring, F&B Consulting & IT Solution</title>
-<script src="https://cdn.tailwindcss.com"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
 
-<!-- Nav -->
-<header class="sticky top-0 z-40 bg-white/95 backdrop-blur hairline-b">
-  <nav class="max-w-5xl mx-auto px-6 py-5 flex items-center justify-between">
-    <a href="index.html" class="flex items-center gap-3">
-      <img src="assets/Logo-06.png" class="h-8" alt="Karya Adiwangsa Sejahtera">
-      <span class="text-sm font-medium tracking-tight text-[var(--ink)]">Karya Adiwangsa Sejahtera</span>
+<nav>
+  <div class="wrap">
+    <a href="index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none">
+      <img src="assets/Logo-06.png" style="height:28px" alt="Karya Adiwangsa Sejahtera">
+      <span style="font-family:var(--display);font-weight:600;font-size:15px;color:var(--ink)">Karya Adiwangsa Sejahtera</span>
     </a>
-    <ul class="hidden md:flex items-center gap-8 text-sm text-[var(--ink-soft)]">
-      <li><a href="epoxy-flooring.html" class="hover:text-[var(--ink)] transition">Epoxy Flooring</a></li>
-      <li><a href="fnb-consulting.html" class="hover:text-[var(--ink)] transition">F&B Consulting</a></li>
-      <li><a href="it-solution.html" class="hover:text-[var(--ink)] transition">IT Solution</a></li>
-      <li><a href="#tentang" class="hover:text-[var(--ink)] transition">Tentang</a></li>
-    </ul>
-    <a href="#kontak" class="btn-primary text-sm">Hubungi Kami</a>
-  </nav>
-</header>
+    <div class="navlinks">
+      <a href="epoxy-flooring.html">epoxy flooring</a>
+      <a href="fnb-consulting.html">f&amp;b consulting</a>
+      <a href="it-solution.html">it solution</a>
+      <a href="#company">company</a>
+      <a href="#contact">contact</a>
+    </div>
+    <a href="#contact" class="btn solid" style="font-size:12px;padding:10px 18px">hubungi kami</a>
+  </div>
+</nav>
 
 <!-- Hero -->
-<section class="max-w-5xl mx-auto px-6 pt-20 pb-16 md:pt-28 md:pb-24">
-  <p class="label mb-6 fade-up">PT Karya Adiwangsa Sejahtera</p>
-  <h1 class="font-display font-normal text-[2.75rem] md:text-[4.25rem] leading-[1.05] tracking-tight text-[var(--ink)] max-w-3xl mb-8 fade-up" style="animation-delay:.05s">
-    Tiga keahlian, satu standar kerja.
-  </h1>
-  <p class="text-lg text-[var(--ink-soft)] max-w-xl leading-relaxed mb-4 fade-up" style="animation-delay:.1s">
-    Kami menaungi tiga unit bisnis yang lahir dari kebutuhan nyata klien kami —
-    lantai industrial yang kokoh, dapur bisnis kuliner yang tertata, dan sistem
-    digital yang membuat operasional berjalan lebih baik.
-  </p>
-  <p class="text-sm text-[var(--muted)] max-w-xl leading-relaxed mb-10 fade-up" style="animation-delay:.12s">
-    Setiap unit punya standar kerja yang sama — kami cantumkan garansinya, bukan cuma janjinya.
-  </p>
-  <div class="flex flex-wrap gap-4 fade-up" style="animation-delay:.15s">
-    <a href="#unit-bisnis" class="btn-primary">Lihat Unit Bisnis</a>
-    <a href="#kontak" class="btn-ghost">Konsultasi Gratis</a>
+<div class="wrap" style="padding-top:clamp(64px,10vh,110px);padding-bottom:clamp(40px,6vh,70px)">
+  <span class="eyebrow fade-up">PT Karya Adiwangsa Sejahtera</span>
+  <h1 class="fade-up" style="margin-top:18px;max-width:16ch">tiga keahlian, <span style="color:var(--it)">satu standar kerja.</span></h1>
+  <p class="lede fade-up" style="margin-top:24px;max-width:34ch">Kami menaungi tiga unit bisnis yang lahir dari kebutuhan nyata klien kami — lantai industrial yang kokoh, dapur bisnis kuliner yang tertata, dan sistem digital yang membuat operasional berjalan lebih baik.</p>
+  <div style="margin-top:8px;font-size:13.5px;color:var(--muted)" class="fade-up">Jakarta, Indonesia</div>
+  <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:34px" class="fade-up">
+    <a href="#unit-bisnis" class="btn solid">lihat unit bisnis</a>
+    <a href="#contact" class="btn ghost">konsultasi gratis</a>
+  </div>
+</div>
+
+<!-- Mission -->
+<section class="pad" id="mission">
+  <div class="wrap">
+    <span class="eyebrow">Fokus Kami</span>
+    <p style="margin-top:18px;font-size:clamp(22px,3.2vw,32px);font-family:var(--display);font-weight:500;letter-spacing:-.01em;line-height:1.25;max-width:26ch;color:var(--ink)">
+      Kami kerjakan proyek yang bisa kami pertanggungjawabkan — dan kami buktikan lewat garansi tertulis, bukan janji lisan.
+    </p>
+    <div style="display:grid;gap:32px;margin-top:44px;grid-template-columns:1fr" class="mission-grid">
+      <div>
+        <h3>Siapa yang kami layani</h3>
+        <p style="margin-top:10px;font-size:15px;line-height:1.65;color:var(--body)">Pemilik pabrik, gudang, dan fasilitas komersial yang butuh lantai yang tahan lama. Pelaku usaha kuliner yang mau naik kelas dari dapur rumahan. Bisnis yang butuh sistem digital dan keamanan fisik jalan bersamaan.</p>
+      </div>
+      <div>
+        <h3>Bagaimana kami membuktikan</h3>
+        <p style="margin-top:10px;font-size:15px;line-height:1.65;color:var(--body)">Survei lokasi sebelum kasih harga, bukan estimasi dari foto. Garansi tertulis di kontrak kerja, bukan janji presentasi. Setiap unit diawasi standar kerja yang sama.</p>
+      </div>
+      <div>
+        <h3>Di mana kami beroperasi</h3>
+        <p style="margin-top:10px;font-size:15px;line-height:1.65;color:var(--body)">Berbasis di Jakarta, melayani proyek epoxy dan IT di seluruh Jabodetabek. Konsultasi F&B bisa dilakukan jarak jauh untuk klien di luar kota.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<style>@media(min-width:820px){.mission-grid{grid-template-columns:repeat(3,1fr) !important}}</style>
+
+<!-- Epoxy -->
+<div class="bleed amber" id="epoxy-section">
+  <div class="wrap" style="padding-top:clamp(56px,8vh,90px);padding-bottom:clamp(44px,6vh,70px);text-align:center">
+    <span class="eyebrow">Unit Bisnis — 01</span>
+    <h2 style="margin-top:14px">epoxy flooring</h2>
+    <p class="lede" style="margin:20px auto 0;max-width:32ch">Lantai industrial yang kokoh, rapi, dan tahan lama.</p>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:30px">
+      <a href="epoxy-flooring.html" class="btn solid">jelajahi epoxy flooring</a>
+    </div>
+  </div>
+</div>
+
+<!-- F&B -->
+<div class="bleed crimson" id="fnb-section">
+  <div class="wrap" style="padding-top:clamp(56px,8vh,90px);padding-bottom:clamp(44px,6vh,70px);text-align:center">
+    <span class="eyebrow">Unit Bisnis — 02</span>
+    <h2 style="margin-top:14px">f&amp;b specialist consultant</h2>
+    <p class="lede" style="margin:20px auto 0;max-width:32ch">Bisnis kuliner yang tertata dari dapur sampai meja kasir.</p>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:30px">
+      <a href="fnb-consulting.html" class="btn solid">jelajahi f&amp;b consulting</a>
+    </div>
+  </div>
+</div>
+
+<!-- IT -->
+<div class="bleed sky" id="it-section">
+  <div class="wrap" style="padding-top:clamp(56px,8vh,90px);padding-bottom:clamp(44px,6vh,70px);text-align:center">
+    <span class="eyebrow">Unit Bisnis — 03</span>
+    <h2 style="margin-top:14px">it solution</h2>
+    <p class="lede" style="margin:20px auto 0;max-width:32ch">Digitalisasi & keamanan bisnis dalam satu mitra.</p>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:30px">
+      <a href="it-solution.html" class="btn solid">jelajahi it solution</a>
+    </div>
+  </div>
+</div>
+
+<!-- Stats -->
+<section class="pad" style="background:var(--paper-2)">
+  <div class="wrap center" style="text-align:center">
+    <span class="eyebrow">Sekilas Angka</span>
+    <div class="stats" style="justify-content:center">
+      <div class="stat"><span class="v">3</span><span class="l">Unit Bisnis</span></div>
+      <div class="stat"><span class="v">2026</span><span class="l">Berdiri</span></div>
+      <div class="stat"><span class="v">100%</span><span class="l">Survei Lokasi</span></div>
+      <div class="stat"><span class="v">B2B</span><span class="l">Fokus Industri</span></div>
+    </div>
   </div>
 </section>
 
-<!-- Unit Bisnis -- numbered editorial list, bukan icon-card grid -->
-<section id="unit-bisnis" class="hairline-b">
-  <div class="max-w-5xl mx-auto px-6">
-
-    <a href="epoxy-flooring.html" class="group flex flex-col md:flex-row md:items-baseline gap-2 md:gap-8 py-10 hairline-b">
-      <span class="text-sm text-[var(--muted)] font-medium md:w-10 shrink-0">01</span>
-      <div class="flex-1">
-        <h3 class="font-display text-2xl md:text-3xl text-[var(--ink)] mb-2 group-hover:text-[var(--epoxy)] transition-colors">
-          Epoxy Flooring
-        </h3>
-        <p class="text-[var(--ink-soft)] max-w-xl leading-relaxed">
-          Pelapisan lantai industrial tahan bahan kimia, tahan aus, dan bebas debu — untuk pabrik, gudang, dan fasilitas komersial.
-        </p>
-      </div>
-      <span class="text-sm font-medium text-[var(--epoxy)] shrink-0 self-start md:self-center">Lihat layanan →</span>
-    </a>
-
-    <a href="fnb-consulting.html" class="group flex flex-col md:flex-row md:items-baseline gap-2 md:gap-8 py-10 hairline-b">
-      <span class="text-sm text-[var(--muted)] font-medium md:w-10 shrink-0">02</span>
-      <div class="flex-1">
-        <h3 class="font-display text-2xl md:text-3xl text-[var(--ink)] mb-2 group-hover:text-[var(--fnb)] transition-colors">
-          F&B Specialist Consultant
-        </h3>
-        <p class="text-[var(--ink-soft)] max-w-xl leading-relaxed">
-          Konsultan bisnis kuliner — konsep, desain dapur & alur operasional, SOP, hingga strategi supply chain.
-        </p>
-      </div>
-      <span class="text-sm font-medium text-[var(--fnb)] shrink-0 self-start md:self-center">Lihat layanan →</span>
-    </a>
-
-    <a href="it-solution.html" class="group flex flex-col md:flex-row md:items-baseline gap-2 md:gap-8 py-10">
-      <span class="text-sm text-[var(--muted)] font-medium md:w-10 shrink-0">03</span>
-      <div class="flex-1">
-        <h3 class="font-display text-2xl md:text-3xl text-[var(--ink)] mb-2 group-hover:text-[var(--it)] transition-colors">
-          IT Solution
-        </h3>
-        <p class="text-[var(--ink-soft)] max-w-xl leading-relaxed">
-          IoT, software & aplikasi custom, ERP/CRM, hingga hardware keamanan — CCTV, akses kontrol, dan sistem terintegrasi.
-        </p>
-      </div>
-      <span class="text-sm font-medium text-[var(--it)] shrink-0 self-start md:self-center">Lihat layanan →</span>
-    </a>
-
+<!-- Principles / Pledges -->
+<section class="pad" id="principles">
+  <div class="wrap mid" style="text-align:center">
+    <span class="eyebrow">Yang Kami Pegang</span>
+    <h2 style="margin-top:18px">tiga janji, masing-masing dengan mekanisme di baliknya.</h2>
+    <p class="lede" style="margin-top:24px;color:var(--body)">Janji yang tidak bisa dicek adalah pemasaran. Masing-masing ini dijaga oleh sesuatu yang konkret — bukan sekadar niat baik.</p>
   </div>
-</section>
-
-<!-- Yang Kami Pegang -- janji dibuktikan dengan mekanisme konkret, bukan cuma slogan -->
-<section class="hairline-b bg-[var(--surface-alt)]">
-  <div class="max-w-5xl mx-auto px-6 py-16 md:py-20">
-    <p class="label mb-3">Yang Kami Pegang</p>
-    <h2 class="font-display text-2xl md:text-3xl text-[var(--ink)] leading-tight mb-10 max-w-2xl">
-      Janji yang gampang diucap. Kami tulis apa yang menjaganya.
-    </h2>
-    <div class="grid md:grid-cols-3 gap-x-10 gap-y-8">
-      <div>
-        <p class="text-xs font-semibold text-[var(--muted)] mb-2">01 — GARANSI TERTULIS</p>
-        <p class="font-medium text-[var(--ink)] mb-2">Bukan janji lisan saat presentasi.</p>
-        <p class="text-sm text-[var(--ink-soft)] leading-relaxed">Masa garansi dan cakupannya dicantumkan eksplisit di SPK/kontrak kerja setiap proyek — bisa ditagih kalau tidak sesuai, bukan sekadar niat baik.</p>
+  <div class="wrap">
+    <div class="pledges">
+      <div class="pledge">
+        <span class="pn">01</span>
+        <h3>Garansi tertulis, bukan janji lisan</h3>
+        <p>Setiap proyek epoxy dan IT punya masa garansi yang jelas.</p>
+        <p class="mech"><b>Mekanismenya:</b> cakupan dan durasi garansi dicantumkan eksplisit di SPK/kontrak kerja — bisa ditagih kalau tidak sesuai, bukan sekadar diucapkan saat presentasi.</p>
       </div>
-      <div>
-        <p class="text-xs font-semibold text-[var(--muted)] mb-2">02 — SATU TIM, TIGA KEAHLIAN</p>
-        <p class="font-medium text-[var(--ink)] mb-2">Bukan tiga vendor lepas yang kebetulan sama nama.</p>
-        <p class="text-sm text-[var(--ink-soft)] leading-relaxed">Ketiga unit lahir dari kebutuhan klien yang sama dan diawasi standar kerja yang sama — koordinasi lintas unit tidak perlu diperkenalkan ulang dari nol.</p>
+      <div class="pledge">
+        <span class="pn">02</span>
+        <h3>Satu tim, tiga keahlian</h3>
+        <p>Bukan tiga vendor lepas yang kebetulan satu nama perusahaan.</p>
+        <p class="mech"><b>Mekanismenya:</b> ketiga unit lahir dari kebutuhan klien yang sama dan diawasi standar kerja yang sama — koordinasi lintas unit tidak perlu dijelaskan ulang dari nol.</p>
       </div>
-      <div>
-        <p class="text-xs font-semibold text-[var(--muted)] mb-2">03 — SURVEI SEBELUM HARGA</p>
-        <p class="font-medium text-[var(--ink)] mb-2">Bukan estimasi dari foto/WhatsApp.</p>
-        <p class="text-sm text-[var(--ink-soft)] leading-relaxed">Penawaran untuk proyek epoxy & IT selalu berdasar survei lokasi langsung — supaya angka yang kami kasih memang bisa dipegang saat eksekusi.</p>
+      <div class="pledge">
+        <span class="pn">03</span>
+        <h3>Survei sebelum harga</h3>
+        <p>Bukan estimasi dari foto atau chat WhatsApp.</p>
+        <p class="mech"><b>Mekanismenya:</b> penawaran untuk proyek epoxy & IT selalu berdasar survei lokasi langsung, supaya angka yang kami kasih memang bisa dipegang saat eksekusi.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Tentang -->
-<section id="tentang" class="max-w-5xl mx-auto px-6 py-20 md:py-28">
-  <div class="grid md:grid-cols-[200px_1fr] gap-8 md:gap-16">
-    <p class="label">Tentang Kami</p>
-    <div class="max-w-2xl">
-      <h2 class="font-display text-3xl md:text-4xl text-[var(--ink)] leading-tight mb-6">
-        Satu grup, tiga keahlian yang saling melengkapi.
-      </h2>
-      <p class="text-[var(--ink-soft)] leading-relaxed mb-4">
-        PT Karya Adiwangsa Sejahtera dimulai dari layanan pelapisan lantai industrial
-        (epoxy flooring) untuk pabrik dan fasilitas komersial. Dari sana, kami melihat
-        bahwa klien kami — pemilik pabrik, resto, hingga gedung perkantoran — punya
-        kebutuhan yang lebih luas dari sekadar lantai.
-      </p>
-      <p class="text-[var(--ink-soft)] leading-relaxed mb-10">
-        Kami kemudian mengembangkan dua unit bisnis baru: konsultasi F&B untuk pelaku
-        usaha kuliner yang butuh sistem operasional matang, dan IT Solution untuk
-        bisnis yang butuh digitalisasi serta keamanan fisik terintegrasi. Ketiganya
-        berjalan dengan standar kerja dan integritas yang sama.
-      </p>
-      <div class="grid grid-cols-3 gap-6 hairline pt-6">
-        <div>
-          <p class="text-sm font-medium text-[var(--ink)] mb-1">Fokus Industri</p>
-          <p class="text-sm text-[var(--muted)] leading-relaxed">Pabrik, gudang, F&B, perkantoran, dan fasilitas komersial.</p>
-        </div>
-        <div>
-          <p class="text-sm font-medium text-[var(--ink)] mb-1">End-to-End</p>
-          <p class="text-sm text-[var(--muted)] leading-relaxed">Dari konsultasi sampai eksekusi & maintenance.</p>
-        </div>
-        <div>
-          <p class="text-sm font-medium text-[var(--ink)] mb-1">Bergaransi</p>
-          <p class="text-sm text-[var(--muted)] leading-relaxed">Standar kerja terukur dengan garansi layanan.</p>
-        </div>
+<!-- Milestones -->
+<section class="pad" id="milestones" style="background:var(--paper-2)">
+  <div class="wrap">
+    <span class="eyebrow">Sampai Sejauh Ini</span>
+    <h2 style="margin-top:18px;max-width:18ch">perjalanan singkat, karena memang baru mulai.</h2>
+    <ol class="timeline">
+      <li class="hi">
+        <span class="when">2026</span>
+        <div class="desc"><b>PT Karya Adiwangsa Sejahtera berdiri</b> dari layanan epoxy flooring untuk pabrik dan fasilitas komersial.</div>
+      </li>
+      <li>
+        <span class="when">2026</span>
+        <div class="desc"><b>Unit F&amp;B Specialist Consultant dibentuk</b> — menjawab kebutuhan klien pemilik pabrik yang juga punya usaha kuliner sampingan atau resto sendiri.</div>
+      </li>
+      <li>
+        <span class="when">2026</span>
+        <div class="desc"><b>Unit IT Solution dibentuk</b> — melengkapi kebutuhan klien akan digitalisasi dan keamanan fisik (CCTV, akses kontrol) di fasilitas yang sama.</div>
+      </li>
+      <li class="next">
+        <span class="when">Selanjutnya</span>
+        <div class="desc"><b>Memperluas jangkauan proyek epoxy & IT di luar Jabodetabek.</b> Kalau bisnis Anda butuh salah satu dari tiga keahlian ini, kontak ada di bagian bawah halaman.</div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- Company + Directors -->
+<section class="pad" id="company">
+  <div class="wrap mid" style="text-align:center">
+    <span class="eyebrow">Perusahaan</span>
+    <h2 style="margin-top:18px">kecil, dan sengaja begitu.</h2>
+    <p class="lede" style="margin-top:24px;color:var(--body)">PT Karya Adiwangsa Sejahtera fokus pada sedikit keahlian dan berusaha benar-benar menguasainya.</p>
+  </div>
+  <div class="wrap mid" style="margin-top:36px;display:flex;flex-direction:column;gap:16px">
+    <p style="font-size:15px;line-height:1.65;color:var(--body)">Kami mulai dari epoxy flooring — melihat langsung bagaimana pabrik dan gudang butuh lantai yang benar-benar tahan lama, bukan yang cuma terlihat bagus saat serah terima.</p>
+    <p style="font-size:15px;line-height:1.65;color:var(--body)">Dari sana kami sadar: klien yang sama sering juga butuh dapur yang tertata atau sistem keamanan yang jalan. Jadi kami bangun dua unit lagi, dengan standar kerja yang sama.</p>
+  </div>
+  <div class="wrap" style="margin-top:50px">
+    <p class="eyebrow">Tim Inti</p>
+    <div class="people">
+      <div class="person">
+        <span class="initials">KAS</span>
+        <span class="nm">Divisi Epoxy Flooring</span>
+        <span class="rl">Survei, aplikasi, dan quality control lapangan</span>
+        <p class="remit">Mengelola proyek dari survei lokasi sampai serah terima, termasuk garansi pasca-pengerjaan.</p>
+      </div>
+      <div class="person">
+        <span class="initials">KAS</span>
+        <span class="nm">Divisi F&amp;B Consulting</span>
+        <span class="rl">Konsep, SOP, dan operasional dapur</span>
+        <p class="remit">Mendampingi klien dari perencanaan konsep sampai tim dapur berjalan sesuai SOP.</p>
+      </div>
+      <div class="person">
+        <span class="initials">KAS</span>
+        <span class="nm">Divisi IT Solution</span>
+        <span class="rl">Software, hardware, dan instalasi keamanan</span>
+        <p class="remit">Menangani software custom, ERP/CRM, sampai instalasi CCTV dan akses kontrol on-site.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Kontak -->
-<section id="kontak" class="bg-[var(--dark)] text-white">
-  <div class="max-w-5xl mx-auto px-6 py-20 md:py-28 grid md:grid-cols-2 gap-12">
-    <div>
-      <p class="label text-[#8A8A8A] mb-6">Kontak</p>
-      <h2 class="font-display text-3xl md:text-4xl mb-6 leading-tight">
-        Siap diskusikan kebutuhan bisnis Anda?
-      </h2>
-      <p class="text-[#B0B0B0] leading-relaxed mb-8 max-w-md">
-        Tim kami siap membantu — baik untuk proyek epoxy flooring, konsultasi F&B,
-        maupun kebutuhan digitalisasi & keamanan bisnis Anda.
+<!-- Contact -->
+<div class="bleed dark" id="contact">
+  <section class="pad" style="text-align:center">
+    <div class="wrap mid">
+      <span class="eyebrow" style="color:#8A8A8A">Kontak</span>
+      <h2 style="margin-top:18px">bekerja samalah dengan kami.</h2>
+      <p class="lede" style="margin-top:24px;color:#B0B0B0">Butuh proyek epoxy flooring, konsultasi F&amp;B, atau digitalisasi bisnis?</p>
+      <p style="margin-top:30px">
+        <a href="mailto:info@karyaadiwangsa.co.id" style="color:var(--it);font-size:19px;font-weight:600;text-decoration:none">info@karyaadiwangsa.co.id</a>
       </p>
-      <div class="flex flex-col gap-3 text-sm text-[#D0D0D0] hairline pt-6" style="border-color: #333;">
-        <div>+62 812-3456-7890</div>
-        <div>info@karyaadiwangsa.co.id</div>
-        <div>Jakarta, Indonesia</div>
+      <p style="margin-top:8px;color:#B0B0B0;font-size:14px">+62 812-3456-7890 · Jakarta, Indonesia</p>
+      <div style="margin-top:26px">
+        <a href="#" class="btn solid">kirim kebutuhan anda</a>
       </div>
     </div>
-    <form class="flex flex-col gap-4">
-      <input type="text" placeholder="Nama Lengkap" class="w-full bg-transparent border border-[#333] rounded px-4 py-3 text-sm text-white placeholder:text-[#777] focus:outline-none focus:border-white transition">
-      <input type="text" placeholder="Perusahaan / Bisnis" class="w-full bg-transparent border border-[#333] rounded px-4 py-3 text-sm text-white placeholder:text-[#777] focus:outline-none focus:border-white transition">
-      <select class="w-full bg-transparent border border-[#333] rounded px-4 py-3 text-sm text-[#B0B0B0] focus:outline-none focus:border-white transition">
-        <option class="bg-[var(--dark)]">Tertarik dengan layanan apa?</option>
-        <option class="bg-[var(--dark)]">Epoxy Flooring</option>
-        <option class="bg-[var(--dark)]">F&B Consulting</option>
-        <option class="bg-[var(--dark)]">IT Solution</option>
-      </select>
-      <textarea placeholder="Ceritakan kebutuhan Anda" rows="3" class="w-full bg-transparent border border-[#333] rounded px-4 py-3 text-sm text-white placeholder:text-[#777] focus:outline-none focus:border-white transition"></textarea>
-      <button type="submit" class="bg-white text-[var(--dark)] font-medium py-3 rounded text-sm hover:bg-[#E0E0E0] transition">
-        Kirim Permintaan
-      </button>
-    </form>
-  </div>
-</section>
+  </section>
+</div>
 
 <!-- Footer -->
-<footer class="bg-[var(--dark)] text-[#8A8A8A] hairline" style="border-color:#2A2A2A">
-  <div class="max-w-5xl mx-auto px-6 py-10 flex flex-col sm:flex-row justify-between gap-4 text-xs">
-    <p>© 2026 PT Karya Adiwangsa Sejahtera</p>
-    <div class="flex gap-6">
-      <a href="epoxy-flooring.html" class="hover:text-white transition">Epoxy Flooring</a>
-      <a href="fnb-consulting.html" class="hover:text-white transition">F&B Consulting</a>
-      <a href="it-solution.html" class="hover:text-white transition">IT Solution</a>
+<footer style="background:var(--ink);border-top:1px solid #222">
+  <div class="wrap" style="padding-block:36px;display:flex;flex-direction:column;gap:16px" >
+    <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;align-items:center">
+      <span style="font-family:var(--display);font-weight:600;font-size:14px;color:#8A8A8A">KAS</span>
+      <div style="display:flex;gap:20px;font-size:12.5px">
+        <a href="epoxy-flooring.html" style="color:#8A8A8A;text-decoration:none">Epoxy Flooring</a>
+        <a href="fnb-consulting.html" style="color:#8A8A8A;text-decoration:none">F&amp;B Consulting</a>
+        <a href="it-solution.html" style="color:#8A8A8A;text-decoration:none">IT Solution</a>
+      </div>
     </div>
+    <p style="font-size:11.5px;color:#666">© 2026 PT Karya Adiwangsa Sejahtera. Jakarta, Indonesia.</p>
   </div>
 </footer>
 

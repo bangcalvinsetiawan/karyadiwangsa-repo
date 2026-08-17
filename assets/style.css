@@ -1,79 +1,125 @@
-/* PT Karya Adiwangsa Sejahtera — Design System v2
-   Prinsip: HashiCorp-inspired -- monokrom + 1 warna per produk (tidak dicampur),
-   shadow whisper (nyaris tak terlihat), radius tajam, tanpa gradient dekoratif. */
+/* PT Karya Adiwangsa Sejahtera — Design System v3
+   Sistem token+komponen diadopsi dari Gigzen (Shakhtar-Sankur/gigzen):
+   eyebrow/lede, pledge dengan "mekanisme", timeline riwayat, person card,
+   bleed gradient bands, btn solid/ghost mono. Warna disesuaikan brand KAS. */
 
 :root {
-  --ink: #0A0A0A;
-  --ink-soft: #3D3D3D;
-  --muted: #6B6B6B;
-  --border: #E4E4E4;
-  --surface: #FFFFFF;
-  --surface-alt: #FAFAF8;
-  --dark: #121212;
-  --dark-soft: #1C1C1C;
+  --ink:      #0A0A0A;
+  --paper:    #FFFFFF;
+  --paper-2:  #F5F5F5;
+  --body:     #46474B;
+  --muted:    #6B6B6B;
+  --rule:     #E3E3E3;
 
-  --epoxy: #C2680A;
-  --fnb: #A8291E;
-  --it: #1D4ED8;
+  /* Warna unit bisnis -- identitas eksklusif, bukan gradient campur */
+  --epoxy:    #B45A09;
+  --fnb:      #A8291E;
+  --it:       #1450C4;
+
+  --display: 'Fraunces', Georgia, serif;
+  --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --mono: ui-monospace, 'SF Mono', 'Cascadia Mono', Menlo, Consolas, monospace;
 }
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
-  background: var(--surface);
-  color: var(--ink);
-  font-family: 'Inter', system-ui, sans-serif;
+  margin: 0; background: var(--paper); color: var(--body);
+  font-family: var(--sans); font-size: 17px; line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
-.font-display { font-family: 'Fraunces', Georgia, serif; }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 26px; }
+.mid { max-width: 640px; margin-inline: auto; }
+p { margin: 0; }
+strong { color: var(--ink); font-weight: 600; }
+a { color: inherit; }
 
-.label {
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--muted);
+h1, h2, h3 {
+  margin: 0; color: var(--ink); font-family: var(--display);
+  font-weight: 600; letter-spacing: -0.02em; line-height: 1.05;
 }
+h1 { font-size: clamp(40px, 8vw, 76px); }
+h2 { font-size: clamp(30px, 5.5vw, 52px); }
+h3 { font-size: clamp(20px, 2.4vw, 26px); letter-spacing: -.01em; }
 
-.hairline { border-top: 1px solid var(--border); }
-.hairline-b { border-bottom: 1px solid var(--border); }
+.eyebrow { font-size: 11px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); }
+.lede { font-size: clamp(18px, 2vw, 24px); line-height: 1.4; letter-spacing: -.01em; color: var(--body); }
 
-.card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  transition: border-color .2s ease;
+/* ── bleed bands: wash gradient tipis, bukan blok solid navy-ungu ── */
+.bleed { width: 100%; }
+.bleed.amber { background: linear-gradient(165deg,
+  color-mix(in srgb, var(--epoxy) 14%, var(--paper)) 0%,
+  color-mix(in srgb, var(--epoxy) 5%, var(--paper)) 55%, var(--paper) 100%); }
+.bleed.crimson { background: linear-gradient(165deg,
+  color-mix(in srgb, var(--fnb) 13%, var(--paper)) 0%,
+  color-mix(in srgb, var(--fnb) 5%, var(--paper)) 55%, var(--paper) 100%); }
+.bleed.sky { background: linear-gradient(165deg,
+  color-mix(in srgb, var(--it) 13%, var(--paper)) 0%,
+  color-mix(in srgb, var(--it) 5%, var(--paper)) 55%, var(--paper) 100%); }
+.bleed.dark { background: var(--ink); color: #B0B0B0; }
+.bleed.dark h1, .bleed.dark h2, .bleed.dark h3 { color: #F5F5F5; }
+
+/* ── button (mono, seperti Gigzen) ── */
+.btn {
+  display: inline-block; font-family: var(--mono); font-size: 13px; font-weight: 700;
+  padding: 14px 26px; border-radius: 3px; text-decoration: none; border: 1px solid;
+  transition: transform .18s ease, box-shadow .18s ease;
 }
-.card:hover { border-color: var(--ink); }
+.btn.solid { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.btn.solid:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(0,0,0,.2); }
+.btn.ghost { background: transparent; color: inherit; border-color: currentColor; opacity: .78; }
+.btn.ghost:hover { opacity: 1; }
 
-.btn-primary {
-  background: var(--ink);
-  color: white;
-  border-radius: 4px;
-  padding: 0.75rem 1.5rem;
-  font-weight: 500;
-  font-size: 0.9375rem;
-  transition: background .15s ease;
+/* ── pledge: janji dibuktikan dengan mekanisme ── */
+.pledges { display: grid; gap: 26px; grid-template-columns: 1fr; margin-top: clamp(32px, 4vw, 48px); }
+@media (min-width: 900px) { .pledges { grid-template-columns: repeat(3, 1fr); } }
+.pledge { border-top: 2px solid var(--ink); padding-top: 18px; }
+.pledge .pn { font-family: var(--mono); font-size: 12px; color: var(--muted); letter-spacing: .1em; }
+.pledge h3 { margin-top: 8px; font-size: 19px; letter-spacing: -.01em; line-height: 1.25; }
+.pledge p { margin-top: 10px; font-size: 15px; line-height: 1.6; color: var(--body); }
+.pledge .mech { margin-top: 10px; font-size: 13.5px; line-height: 1.55; color: var(--muted); }
+.pledge .mech b { color: var(--ink); }
+
+/* ── timeline riwayat ── */
+.timeline { list-style: none; margin: clamp(28px, 3vw, 40px) 0 0; padding: 0; }
+.timeline li { display: grid; gap: 4px 24px; padding: 18px 0; border-top: 1px solid var(--rule); grid-template-columns: 1fr; }
+@media (min-width: 720px) { .timeline li { grid-template-columns: 160px 1fr; } }
+.timeline .when { font-family: var(--mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); padding-top: 2px; }
+.timeline div.desc { font-size: 15px; line-height: 1.6; color: var(--body); max-width: 68ch; }
+.timeline b { color: var(--ink); }
+.timeline li.hi { border-top-color: var(--ink); }
+.timeline li.hi .when { color: var(--ink); }
+
+/* ── person card ── */
+.people { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin-top: 20px; }
+.person { background: var(--paper); border: 1px solid var(--rule); border-radius: 12px; padding: 26px 24px; display: flex; flex-direction: column; gap: 5px; }
+.person .initials { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center;
+  font-family: var(--display); font-weight: 700; font-size: 15px; background: var(--ink); color: var(--paper); margin-bottom: 10px; }
+.person .nm { font-family: var(--display); font-weight: 600; font-size: 18px; letter-spacing: -.01em; color: var(--ink); }
+.person .rl { font-size: 12.5px; color: var(--muted); }
+.person .remit { margin-top: 10px; font-size: 13.5px; line-height: 1.5; color: var(--body); }
+
+/* ── stats ── */
+.stats { display: grid; gap: 26px; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); margin-top: 40px; }
+.stat .v { display: block; font-family: var(--display); font-weight: 600; font-size: clamp(30px, 4.4vw, 46px); letter-spacing: -.02em; color: var(--ink); line-height: 1; }
+.stat .l { display: block; margin-top: 8px; font-size: 10px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+
+/* ── nav ── */
+nav {
+  position: sticky; top: 0; z-index: 90;
+  background: color-mix(in srgb, var(--paper) 93%, transparent);
+  backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid var(--rule);
 }
-.btn-primary:hover { background: var(--ink-soft); }
+nav .wrap { display: flex; align-items: center; justify-content: space-between; padding-block: 16px; }
+.navlinks { display: flex; gap: 26px; }
+.navlinks a { font-size: 13px; color: var(--body); text-decoration: none; }
+.navlinks a:hover { color: var(--ink); }
+@media (max-width: 760px) { .navlinks { display: none; } }
 
-.btn-ghost {
-  border: 1px solid var(--border);
-  color: var(--ink);
-  border-radius: 4px;
-  padding: 0.75rem 1.5rem;
-  font-weight: 500;
-  font-size: 0.9375rem;
-  transition: border-color .15s ease;
-}
-.btn-ghost:hover { border-color: var(--ink); }
+/* ── fade-in ── */
+@keyframes fadeUp { 0% { opacity: 0; transform: translateY(14px); } 100% { opacity: 1; transform: none; } }
+.fade-up { animation: fadeUp .6s cubic-bezier(.22,.61,.36,1) both; }
 
-@keyframes fadeUp {
-  0% { opacity: 0; transform: translateY(12px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-.fade-up { animation: fadeUp .5s ease both; }
-
-.unit-epoxy { --unit: var(--epoxy); }
-.unit-fnb { --unit: var(--fnb); }
-.unit-it { --unit: var(--it); }
+/* ── generic section pad ── */
+.pad { padding-block: clamp(52px, 7vw, 96px); }

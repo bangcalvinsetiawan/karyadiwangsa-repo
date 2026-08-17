@@ -5,140 +5,120 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Konsultan F&B oleh PT Karya Adiwangsa Sejahtera — konsep bisnis kuliner, desain dapur, SOP operasional, dan strategi supply chain.">
 <title>F&B Specialist Consultant — PT Karya Adiwangsa Sejahtera</title>
-<script src="https://cdn.tailwindcss.com"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
 </head>
-<body class="unit-fnb">
+<body>
 
-<!-- Nav -->
-<header class="sticky top-0 z-40 bg-white/95 backdrop-blur hairline-b">
-  <nav class="max-w-5xl mx-auto px-6 py-5 flex items-center justify-between">
-    <a href="index.html" class="flex items-center gap-3">
-      <img src="assets/Logo-06.png" class="h-8" alt="Karya Adiwangsa Sejahtera">
-      <span class="text-sm font-medium tracking-tight text-[var(--ink)]">Karya Adiwangsa Sejahtera</span>
+<nav>
+  <div class="wrap">
+    <a href="index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none">
+      <img src="assets/Logo-06.png" style="height:28px" alt="Karya Adiwangsa Sejahtera">
+      <span style="font-family:var(--display);font-weight:600;font-size:15px;color:var(--ink)">Karya Adiwangsa Sejahtera</span>
     </a>
-    <ul class="hidden md:flex items-center gap-8 text-sm text-[var(--ink-soft)]">
-      <li><a href="epoxy-flooring.html" class="hover:text-[var(--ink)] transition">Epoxy Flooring</a></li>
-      <li><a href="fnb-consulting.html" class="text-[var(--fnb)] font-medium">F&B Consulting</a></li>
-      <li><a href="it-solution.html" class="hover:text-[var(--ink)] transition">IT Solution</a></li>
-      <li><a href="index.html#tentang" class="hover:text-[var(--ink)] transition">Tentang</a></li>
-    </ul>
-    <a href="index.html#kontak" class="text-sm font-medium text-white px-6 py-3 rounded" style="background:var(--fnb)">Konsultasi Gratis</a>
-  </nav>
-</header>
+    <div class="navlinks">
+      <a href="epoxy-flooring.html">epoxy flooring</a>
+      <a href="fnb-consulting.html" style="color:var(--fnb);font-weight:600">f&amp;b consulting</a>
+      <a href="it-solution.html">it solution</a>
+      <a href="index.html#company">company</a>
+    </div>
+    <a href="index.html#contact" class="btn solid" style="font-size:12px;padding:10px 18px;background:var(--fnb);border-color:var(--fnb)">konsultasi gratis</a>
+  </div>
+</nav>
 
 <!-- Hero -->
-<section class="max-w-5xl mx-auto px-6 pt-20 pb-20 md:pt-28 md:pb-28 hairline-b">
-  <p class="label mb-6" style="color:var(--fnb)">Unit Bisnis — 02</p>
-  <h1 class="font-display font-normal text-[2.5rem] md:text-[3.75rem] leading-[1.08] tracking-tight text-[var(--ink)] max-w-2xl mb-8">
-    Bisnis kuliner yang tertata dari dapur sampai meja kasir.
-  </h1>
-  <p class="text-lg text-[var(--ink-soft)] max-w-xl leading-relaxed mb-10">
-    Kami membantu pelaku usaha F&B membangun fondasi bisnis yang kuat — konsep,
-    alur dapur, standar operasional, hingga rantai pasok yang efisien dan konsisten.
-  </p>
-  <a href="index.html#kontak" class="inline-block text-sm font-medium text-white px-6 py-3 rounded" style="background:var(--fnb)">
-    Diskusikan Konsep Anda
-  </a>
+<div class="bleed crimson">
+  <div class="wrap" style="padding-top:clamp(56px,9vh,100px);padding-bottom:clamp(48px,7vh,80px)">
+    <span class="eyebrow" style="color:var(--fnb)">Unit Bisnis — 02</span>
+    <h1 class="fade-up" style="margin-top:16px;max-width:16ch">bisnis kuliner yang tertata dari dapur sampai meja kasir.</h1>
+    <p class="lede fade-up" style="margin-top:22px;max-width:32ch">Kami membantu pelaku usaha F&amp;B membangun fondasi bisnis yang kuat — konsep, alur dapur, SOP, hingga rantai pasok yang efisien.</p>
+    <div style="margin-top:30px" class="fade-up">
+      <a href="index.html#contact" class="btn solid" style="background:var(--fnb);border-color:var(--fnb)">diskusikan konsep anda</a>
+    </div>
+  </div>
+</div>
+
+<!-- Layanan -- numbered pledge-style, dengan penjelasan "mengapa" -->
+<section class="pad">
+  <div class="wrap">
+    <span class="eyebrow">Layanan Konsultasi</span>
+    <h2 style="margin-top:16px;max-width:20ch">enam layanan, dari konsep sampai tim berjalan sendiri.</h2>
+    <ol class="timeline" style="margin-top:36px">
+      <li class="hi">
+        <span class="when">01</span>
+        <div class="desc"><b>Konsep & menu engineering.</b> Merumuskan konsep bisnis, positioning, dan menu yang balance antara cita rasa dan margin.</div>
+      </li>
+      <li>
+        <span class="when">02</span>
+        <div class="desc"><b>Desain dapur & alur kerja.</b> Tata letak dapur yang efisien — meminimalkan waktu produksi dan potensi bottleneck.</div>
+      </li>
+      <li>
+        <span class="when">03</span>
+        <div class="desc"><b>SOP operasional.</b> Standar kerja tertulis untuk dapur, service, dan kebersihan — konsisten di semua shift.</div>
+      </li>
+      <li>
+        <span class="when">04</span>
+        <div class="desc"><b>Supply chain & vendor.</b> Strategi sourcing bahan baku, manajemen vendor, dan kontrol food cost.</div>
+      </li>
+      <li>
+        <span class="when">05</span>
+        <div class="desc"><b>Analisa kelayakan bisnis.</b> Proyeksi biaya, BEP, dan rencana ekspansi outlet baru.</div>
+      </li>
+      <li>
+        <span class="when">06</span>
+        <div class="desc"><b>Pelatihan tim.</b> Training staf dapur & service agar sesuai standar yang ditetapkan.</div>
+      </li>
+    </ol>
+  </div>
 </section>
 
-<!-- Layanan -- numbered list, bukan icon-card -->
-<section class="hairline-b">
-  <div class="max-w-5xl mx-auto px-6">
-    <div class="grid md:grid-cols-[200px_1fr] gap-8 md:gap-16 py-16 md:py-20">
-      <p class="label">Layanan Konsultasi</p>
-      <div class="divide-y" style="border-color:var(--border)">
-        <div class="flex gap-6 py-6 first:pt-0">
-          <span class="text-sm text-[var(--muted)] w-6 shrink-0">01</span>
-          <div>
-            <p class="font-medium text-[var(--ink)] mb-1">Konsep & Menu Engineering</p>
-            <p class="text-sm text-[var(--ink-soft)] leading-relaxed">Merumuskan konsep bisnis, positioning, dan menu yang balance antara cita rasa dan margin.</p>
-          </div>
-        </div>
-        <div class="flex gap-6 py-6">
-          <span class="text-sm text-[var(--muted)] w-6 shrink-0">02</span>
-          <div>
-            <p class="font-medium text-[var(--ink)] mb-1">Desain Dapur & Alur Kerja</p>
-            <p class="text-sm text-[var(--ink-soft)] leading-relaxed">Tata letak dapur yang efisien — meminimalkan waktu produksi dan potensi bottleneck.</p>
-          </div>
-        </div>
-        <div class="flex gap-6 py-6">
-          <span class="text-sm text-[var(--muted)] w-6 shrink-0">03</span>
-          <div>
-            <p class="font-medium text-[var(--ink)] mb-1">SOP Operasional</p>
-            <p class="text-sm text-[var(--ink-soft)] leading-relaxed">Standar kerja tertulis untuk dapur, service, dan kebersihan — konsisten di semua shift.</p>
-          </div>
-        </div>
-        <div class="flex gap-6 py-6">
-          <span class="text-sm text-[var(--muted)] w-6 shrink-0">04</span>
-          <div>
-            <p class="font-medium text-[var(--ink)] mb-1">Supply Chain & Vendor</p>
-            <p class="text-sm text-[var(--ink-soft)] leading-relaxed">Strategi sourcing bahan baku, manajemen vendor, dan kontrol biaya (food cost).</p>
-          </div>
-        </div>
-        <div class="flex gap-6 py-6">
-          <span class="text-sm text-[var(--muted)] w-6 shrink-0">05</span>
-          <div>
-            <p class="font-medium text-[var(--ink)] mb-1">Analisa Kelayakan Bisnis</p>
-            <p class="text-sm text-[var(--ink-soft)] leading-relaxed">Proyeksi biaya, BEP, dan rencana ekspansi outlet baru.</p>
-          </div>
-        </div>
-        <div class="flex gap-6 py-6 last:pb-0">
-          <span class="text-sm text-[var(--muted)] w-6 shrink-0">06</span>
-          <div>
-            <p class="font-medium text-[var(--ink)] mb-1">Pelatihan Tim</p>
-            <p class="text-sm text-[var(--ink-soft)] leading-relaxed">Training staf dapur & service agar sesuai standar yang ditetapkan.</p>
-          </div>
-        </div>
+<!-- Kenapa -- pledge dengan mekanisme -->
+<section class="pad" style="background:var(--paper-2)">
+  <div class="wrap">
+    <span class="eyebrow">Kenapa Kami</span>
+    <h2 style="margin-top:16px;max-width:20ch">bukan sekadar saran, tapi sistem yang berjalan.</h2>
+    <div class="pledges" style="margin-top:36px">
+      <div class="pledge" style="border-top-color:var(--fnb)">
+        <span class="pn">Masalah umum</span>
+        <h3>Operasional yang berantakan</h3>
+        <p>Food cost tidak terkontrol, dapur tidak efisien, SOP tidak konsisten antar shift.</p>
+      </div>
+      <div class="pledge" style="border-top-color:var(--fnb)">
+        <span class="pn">Pendekatan kami</span>
+        <h3>Sistem, bukan sekadar saran</h3>
+        <p class="mech"><b>Mekanismenya:</b> kami dampingi sampai resep terstandar, alur kerja dapur jelas, dan SOP berjalan tanpa Anda harus mengawasi 24 jam.</p>
+      </div>
+      <div class="pledge" style="border-top-color:var(--fnb)">
+        <span class="pn">Cocok untuk</span>
+        <h3>Rumahan sampai multi-outlet</h3>
+        <p>Usaha rumahan yang mau naik kelas, hingga jaringan resto yang butuh standarisasi antar cabang.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Kenapa -->
-<section class="hairline-b">
-  <div class="max-w-5xl mx-auto px-6 grid md:grid-cols-[200px_1fr] gap-8 md:gap-16 py-16 md:py-20">
-    <p class="label">Kenapa Kami</p>
-    <div class="max-w-2xl">
-      <h2 class="font-display text-2xl md:text-3xl text-[var(--ink)] leading-tight mb-6">
-        Bukan sekadar saran, tapi sistem yang berjalan.
-      </h2>
-      <p class="text-[var(--ink-soft)] leading-relaxed mb-4">
-        Banyak usaha F&B tumbang bukan karena rasa yang kurang enak, tapi karena
-        operasional yang berantakan — food cost tidak terkontrol, dapur tidak efisien,
-        dan SOP yang tidak konsisten antar shift.
-      </p>
-      <p class="text-[var(--ink-soft)] leading-relaxed">
-        Kami membantu Anda membangun sistem yang bisa berjalan tanpa harus Anda
-        awasi 24 jam — dari resep yang terstandar sampai alur kerja dapur yang jelas.
-        Cocok untuk usaha rumahan yang mau naik kelas hingga jaringan resto multi-outlet.
-      </p>
-    </div>
-  </div>
-</section>
-
 <!-- CTA -->
-<section>
-  <div class="max-w-5xl mx-auto px-6 py-16 md:py-20 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-    <h2 class="font-display text-2xl md:text-3xl text-[var(--ink)]">Punya rencana buka usaha kuliner?</h2>
-    <a href="index.html#kontak" class="inline-block text-sm font-medium text-white px-6 py-3 rounded whitespace-nowrap" style="background:var(--fnb)">
-      Jadwalkan Konsultasi
-    </a>
+<section class="pad" style="border-top:1px solid var(--rule)">
+  <div class="wrap" style="display:flex;flex-direction:column;gap:20px;align-items:flex-start">
+    <h2 style="max-width:16ch">punya rencana buka usaha kuliner?</h2>
+    <a href="index.html#contact" class="btn solid" style="background:var(--fnb);border-color:var(--fnb)">jadwalkan konsultasi</a>
   </div>
 </section>
 
 <!-- Footer -->
-<footer class="bg-[var(--dark)] text-[#8A8A8A]">
-  <div class="max-w-5xl mx-auto px-6 py-10 flex flex-col sm:flex-row justify-between gap-4 text-xs">
-    <p>© 2026 PT Karya Adiwangsa Sejahtera</p>
-    <div class="flex gap-6">
-      <a href="epoxy-flooring.html" class="hover:text-white transition">Epoxy Flooring</a>
-      <a href="fnb-consulting.html" class="hover:text-white transition">F&B Consulting</a>
-      <a href="it-solution.html" class="hover:text-white transition">IT Solution</a>
+<footer style="background:var(--ink);border-top:1px solid #222">
+  <div class="wrap" style="padding-block:36px;display:flex;flex-direction:column;gap:16px">
+    <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;align-items:center">
+      <span style="font-family:var(--display);font-weight:600;font-size:14px;color:#8A8A8A">KAS</span>
+      <div style="display:flex;gap:20px;font-size:12.5px">
+        <a href="epoxy-flooring.html" style="color:#8A8A8A;text-decoration:none">Epoxy Flooring</a>
+        <a href="fnb-consulting.html" style="color:#8A8A8A;text-decoration:none">F&amp;B Consulting</a>
+        <a href="it-solution.html" style="color:#8A8A8A;text-decoration:none">IT Solution</a>
+      </div>
     </div>
+    <p style="font-size:11.5px;color:#666">© 2026 PT Karya Adiwangsa Sejahtera. Jakarta, Indonesia.</p>
   </div>
 </footer>
 

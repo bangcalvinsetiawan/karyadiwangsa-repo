@@ -5,148 +5,153 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="IT Solution oleh PT Karya Adiwangsa Sejahtera — IoT, software & aplikasi custom, ERP/CRM, serta hardware keamanan CCTV dan akses kontrol.">
 <title>IT Solution — PT Karya Adiwangsa Sejahtera</title>
-<script src="https://cdn.tailwindcss.com"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
 </head>
-<body class="unit-it">
+<body>
 
-<!-- Nav -->
-<header class="sticky top-0 z-40 bg-white/95 backdrop-blur hairline-b">
-  <nav class="max-w-5xl mx-auto px-6 py-5 flex items-center justify-between">
-    <a href="index.html" class="flex items-center gap-3">
-      <img src="assets/Logo-06.png" class="h-8" alt="Karya Adiwangsa Sejahtera">
-      <span class="text-sm font-medium tracking-tight text-[var(--ink)]">Karya Adiwangsa Sejahtera</span>
+<nav>
+  <div class="wrap">
+    <a href="index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none">
+      <img src="assets/Logo-06.png" style="height:28px" alt="Karya Adiwangsa Sejahtera">
+      <span style="font-family:var(--display);font-weight:600;font-size:15px;color:var(--ink)">Karya Adiwangsa Sejahtera</span>
     </a>
-    <ul class="hidden md:flex items-center gap-8 text-sm text-[var(--ink-soft)]">
-      <li><a href="epoxy-flooring.html" class="hover:text-[var(--ink)] transition">Epoxy Flooring</a></li>
-      <li><a href="fnb-consulting.html" class="hover:text-[var(--ink)] transition">F&B Consulting</a></li>
-      <li><a href="it-solution.html" class="text-[var(--it)] font-medium">IT Solution</a></li>
-      <li><a href="index.html#tentang" class="hover:text-[var(--ink)] transition">Tentang</a></li>
-    </ul>
-    <a href="index.html#kontak" class="text-sm font-medium text-white px-6 py-3 rounded" style="background:var(--it)">Konsultasi Gratis</a>
-  </nav>
-</header>
+    <div class="navlinks">
+      <a href="epoxy-flooring.html">epoxy flooring</a>
+      <a href="fnb-consulting.html">f&amp;b consulting</a>
+      <a href="it-solution.html" style="color:var(--it);font-weight:600">it solution</a>
+      <a href="index.html#company">company</a>
+    </div>
+    <a href="index.html#contact" class="btn solid" style="font-size:12px;padding:10px 18px;background:var(--it);border-color:var(--it)">konsultasi gratis</a>
+  </div>
+</nav>
 
 <!-- Hero -->
-<section class="max-w-5xl mx-auto px-6 pt-20 pb-20 md:pt-28 md:pb-28 hairline-b">
-  <p class="label mb-6" style="color:var(--it)">Unit Bisnis — 03</p>
-  <h1 class="font-display font-normal text-[2.5rem] md:text-[3.75rem] leading-[1.08] tracking-tight text-[var(--ink)] max-w-2xl mb-8">
-    Digitalisasi & keamanan bisnis dalam satu mitra.
-  </h1>
-  <p class="text-lg text-[var(--ink-soft)] max-w-xl leading-relaxed mb-10">
-    Dari sistem IoT, software custom, ERP/CRM, hingga hardware keamanan —
-    kami bangun dan pasang, lalu kami yang jaga agar tetap berjalan.
-  </p>
-  <div class="flex flex-wrap gap-4">
-    <a href="index.html#kontak" class="inline-block text-sm font-medium text-white px-6 py-3 rounded" style="background:var(--it)">
-      Konsultasi Kebutuhan IT
-    </a>
-    <a href="#layanan" class="btn-ghost">Lihat Layanan</a>
+<div class="bleed sky">
+  <div class="wrap" style="padding-top:clamp(56px,9vh,100px);padding-bottom:clamp(48px,7vh,80px)">
+    <span class="eyebrow" style="color:var(--it)">Unit Bisnis — 03</span>
+    <h1 class="fade-up" style="margin-top:16px;max-width:16ch">digitalisasi &amp; keamanan bisnis dalam satu mitra.</h1>
+    <p class="lede fade-up" style="margin-top:22px;max-width:32ch">Dari sistem IoT, software custom, ERP/CRM, hingga hardware keamanan — kami bangun dan pasang, lalu kami yang jaga agar tetap berjalan.</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:30px" class="fade-up">
+      <a href="index.html#contact" class="btn solid" style="background:var(--it);border-color:var(--it)">konsultasi kebutuhan it</a>
+      <a href="#layanan" class="btn ghost">lihat layanan</a>
+    </div>
   </div>
-</section>
+</div>
 
 <!-- Software & Sistem -->
-<section id="layanan" class="hairline-b">
-  <div class="max-w-5xl mx-auto px-6 grid md:grid-cols-[200px_1fr] gap-8 md:gap-16 py-16 md:py-20">
-    <p class="label">Software & Sistem</p>
-    <div class="grid sm:grid-cols-2 gap-x-10 gap-y-8">
-      <div>
-        <p class="font-medium text-[var(--ink)] mb-1">Software & Aplikasi Custom</p>
-        <p class="text-sm text-[var(--ink-soft)] leading-relaxed">Aplikasi web & mobile sesuai kebutuhan bisnis — POS, inventory, dashboard operasional.</p>
+<section class="pad" id="layanan">
+  <div class="wrap">
+    <span class="eyebrow">Software &amp; Sistem</span>
+    <h2 style="margin-top:16px;max-width:20ch">bangun sistem sesuai alur bisnis anda.</h2>
+    <div class="pledges" style="margin-top:36px;grid-template-columns:1fr" id="sw-grid">
+      <div class="pledge" style="border-top-color:var(--it)">
+        <span class="pn">01</span>
+        <h3>Software &amp; aplikasi custom</h3>
+        <p>Aplikasi web & mobile sesuai kebutuhan — POS, inventory, dashboard operasional.</p>
       </div>
-      <div>
-        <p class="font-medium text-[var(--ink)] mb-1">ERP</p>
-        <p class="text-sm text-[var(--ink-soft)] leading-relaxed">Integrasi keuangan, inventori, produksi, dan SDM — data real-time lintas divisi.</p>
+      <div class="pledge" style="border-top-color:var(--it)">
+        <span class="pn">02</span>
+        <h3>ERP</h3>
+        <p>Integrasi keuangan, inventori, produksi, dan SDM — data real-time lintas divisi.</p>
       </div>
-      <div>
-        <p class="font-medium text-[var(--ink)] mb-1">CRM</p>
-        <p class="text-sm text-[var(--ink-soft)] leading-relaxed">Kelola relasi pelanggan, pipeline penjualan, dan follow-up otomatis.</p>
+      <div class="pledge" style="border-top-color:var(--it)">
+        <span class="pn">03</span>
+        <h3>CRM</h3>
+        <p>Kelola relasi pelanggan, pipeline penjualan, dan follow-up otomatis.</p>
       </div>
-      <div>
-        <p class="font-medium text-[var(--ink)] mb-1">IoT & Otomasi</p>
-        <p class="text-sm text-[var(--ink-soft)] leading-relaxed">Sensor & perangkat terhubung untuk monitoring mesin, suhu, kondisi lapangan.</p>
+      <div class="pledge" style="border-top-color:var(--it)">
+        <span class="pn">04</span>
+        <h3>IoT &amp; otomasi</h3>
+        <p>Sensor & perangkat terhubung untuk monitoring mesin, suhu, kondisi lapangan.</p>
       </div>
-      <div>
-        <p class="font-medium text-[var(--ink)] mb-1">Integrasi & API</p>
-        <p class="text-sm text-[var(--ink-soft)] leading-relaxed">Sambungkan sistem lama dengan platform baru — pembayaran, marketplace, dst.</p>
+      <div class="pledge" style="border-top-color:var(--it)">
+        <span class="pn">05</span>
+        <h3>Integrasi &amp; API</h3>
+        <p>Sambungkan sistem lama dengan platform baru — pembayaran, marketplace, dst.</p>
       </div>
-      <div>
-        <p class="font-medium text-[var(--ink)] mb-1">Konsultasi IT Strategis</p>
-        <p class="text-sm text-[var(--ink-soft)] leading-relaxed">Roadmap digitalisasi bisnis — prioritas mana yang perlu didigitalkan lebih dulu.</p>
+      <div class="pledge" style="border-top-color:var(--it)">
+        <span class="pn">06</span>
+        <h3>Konsultasi IT strategis</h3>
+        <p>Roadmap digitalisasi bisnis — prioritas mana yang perlu didigitalkan lebih dulu.</p>
       </div>
     </div>
   </div>
 </section>
+<style>@media(min-width:900px){#sw-grid{grid-template-columns:repeat(3,1fr) !important}}</style>
 
 <!-- Hardware -->
-<section class="hairline-b">
-  <div class="max-w-5xl mx-auto px-6 grid md:grid-cols-[200px_1fr] gap-8 md:gap-16 py-16 md:py-20">
-    <p class="label">Hardware & Keamanan</p>
-    <div class="grid sm:grid-cols-2 gap-x-10 gap-y-8">
-      <div>
-        <p class="font-medium text-[var(--ink)] mb-1">CCTV & Video Analytics</p>
-        <p class="text-sm text-[var(--ink-soft)] leading-relaxed">Pemasangan CCTV IP, monitoring real-time, penyimpanan cloud/NVR.</p>
+<section class="pad" style="background:var(--paper-2)">
+  <div class="wrap">
+    <span class="eyebrow">Hardware &amp; Keamanan</span>
+    <h2 style="margin-top:16px;max-width:20ch">perkuat keamanan fisik fasilitas anda.</h2>
+    <div class="pledges" style="margin-top:36px" id="hw-grid">
+      <div class="pledge" style="border-top-color:var(--it)">
+        <span class="pn">A</span>
+        <h3>CCTV &amp; video analytics</h3>
+        <p>Pemasangan CCTV IP, monitoring real-time, penyimpanan cloud/NVR.</p>
       </div>
-      <div>
-        <p class="font-medium text-[var(--ink)] mb-1">Akses Kontrol</p>
-        <p class="text-sm text-[var(--ink-soft)] leading-relaxed">Sistem kartu, fingerprint, atau face recognition untuk kontrol akses ruangan.</p>
+      <div class="pledge" style="border-top-color:var(--it)">
+        <span class="pn">B</span>
+        <h3>Akses kontrol</h3>
+        <p>Sistem kartu, fingerprint, atau face recognition untuk kontrol akses ruangan.</p>
       </div>
-      <div>
-        <p class="font-medium text-[var(--ink)] mb-1">Absensi & Timesheet</p>
-        <p class="text-sm text-[var(--ink-soft)] leading-relaxed">Mesin absensi terintegrasi dengan sistem payroll/HR Anda.</p>
-      </div>
-      <div>
-        <p class="font-medium text-[var(--ink)] mb-1">Jaringan & Infrastruktur</p>
-        <p class="text-sm text-[var(--ink-soft)] leading-relaxed">Instalasi jaringan kantor/pabrik — kabel, WiFi, hingga server lokal.</p>
+      <div class="pledge" style="border-top-color:var(--it)">
+        <span class="pn">C</span>
+        <h3>Absensi &amp; timesheet</h3>
+        <p>Mesin absensi terintegrasi dengan sistem payroll/HR Anda.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Kenapa -->
-<section class="hairline-b">
-  <div class="max-w-5xl mx-auto px-6 grid md:grid-cols-[200px_1fr] gap-8 md:gap-16 py-16 md:py-20">
-    <p class="label">Kenapa Kami</p>
-    <div class="max-w-2xl">
-      <h2 class="font-display text-2xl md:text-3xl text-[var(--ink)] leading-tight mb-6">
-        Satu mitra untuk software dan hardware sekaligus.
-      </h2>
-      <p class="text-[var(--ink-soft)] leading-relaxed mb-4">
-        Kebanyakan penyedia IT hanya fokus salah satu — software saja, atau hardware
-        saja. Kami menyatukan keduanya: sistem digital Anda terhubung langsung dengan
-        perangkat fisik seperti CCTV, akses kontrol, dan sensor IoT.
-      </p>
-      <p class="text-[var(--ink-soft)] leading-relaxed">
-        Sebagai bagian dari PT Karya Adiwangsa Sejahtera, kami juga memahami kebutuhan
-        fasilitas industri dari sisi konstruksi dan operasional — bukan cuma dari sisi
-        teknologi semata.
-      </p>
+<!-- Kenapa -- pledge dengan mekanisme -->
+<section class="pad">
+  <div class="wrap">
+    <span class="eyebrow">Kenapa Kami</span>
+    <h2 style="margin-top:16px;max-width:22ch">satu mitra untuk software dan hardware sekaligus.</h2>
+    <div class="pledges" style="margin-top:36px">
+      <div class="pledge" style="border-top-color:var(--it)">
+        <span class="pn">Masalah umum</span>
+        <h3>Vendor terpisah, sistem tidak nyambung</h3>
+        <p>Kebanyakan penyedia IT hanya fokus software saja, atau hardware saja.</p>
+      </div>
+      <div class="pledge" style="border-top-color:var(--it)">
+        <span class="pn">Pendekatan kami</span>
+        <h3>Terintegrasi dari awal</h3>
+        <p class="mech"><b>Mekanismenya:</b> sistem digital Anda terhubung langsung dengan perangkat fisik — CCTV, akses kontrol, dan sensor IoT — bukan dua proyek terpisah yang harus disambung belakangan.</p>
+      </div>
+      <div class="pledge" style="border-top-color:var(--it)">
+        <span class="pn">Nilai tambah</span>
+        <h3>Paham sisi fasilitas, bukan cuma teknologi</h3>
+        <p>Sebagai bagian dari KAS, kami juga memahami kebutuhan fasilitas industri dari sisi konstruksi dan operasional.</p>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- CTA -->
-<section>
-  <div class="max-w-5xl mx-auto px-6 py-16 md:py-20 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-    <h2 class="font-display text-2xl md:text-3xl text-[var(--ink)]">Ingin digitalisasi bisnis Anda?</h2>
-    <a href="index.html#kontak" class="inline-block text-sm font-medium text-white px-6 py-3 rounded whitespace-nowrap" style="background:var(--it)">
-      Konsultasi Sekarang
-    </a>
+<section class="pad" style="border-top:1px solid var(--rule)">
+  <div class="wrap" style="display:flex;flex-direction:column;gap:20px;align-items:flex-start">
+    <h2 style="max-width:16ch">ingin digitalisasi bisnis anda?</h2>
+    <a href="index.html#contact" class="btn solid" style="background:var(--it);border-color:var(--it)">konsultasi sekarang</a>
   </div>
 </section>
 
 <!-- Footer -->
-<footer class="bg-[var(--dark)] text-[#8A8A8A]">
-  <div class="max-w-5xl mx-auto px-6 py-10 flex flex-col sm:flex-row justify-between gap-4 text-xs">
-    <p>© 2026 PT Karya Adiwangsa Sejahtera</p>
-    <div class="flex gap-6">
-      <a href="epoxy-flooring.html" class="hover:text-white transition">Epoxy Flooring</a>
-      <a href="fnb-consulting.html" class="hover:text-white transition">F&B Consulting</a>
-      <a href="it-solution.html" class="hover:text-white transition">IT Solution</a>
+<footer style="background:var(--ink);border-top:1px solid #222">
+  <div class="wrap" style="padding-block:36px;display:flex;flex-direction:column;gap:16px">
+    <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;align-items:center">
+      <span style="font-family:var(--display);font-weight:600;font-size:14px;color:#8A8A8A">KAS</span>
+      <div style="display:flex;gap:20px;font-size:12.5px">
+        <a href="epoxy-flooring.html" style="color:#8A8A8A;text-decoration:none">Epoxy Flooring</a>
+        <a href="fnb-consulting.html" style="color:#8A8A8A;text-decoration:none">F&amp;B Consulting</a>
+        <a href="it-solution.html" style="color:#8A8A8A;text-decoration:none">IT Solution</a>
+      </div>
     </div>
+    <p style="font-size:11.5px;color:#666">© 2026 PT Karya Adiwangsa Sejahtera. Jakarta, Indonesia.</p>
   </div>
 </footer>
 
