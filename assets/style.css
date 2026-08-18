@@ -151,25 +151,26 @@ nav .wrap { display: flex; align-items: center; justify-content: space-between; 
 .statInline .stat-num { font-family: var(--display); font-weight: 800; font-size: 24px; color: var(--navy); }
 .statInline .stat-label { font-size: 13px; color: var(--muted); }
 
-/* ── Who We Are: strip 5 panel (versi statis dari whoAccordion asli GS,
-   dengan vertical title saat collapsed -- ciri khas visual desain asli) ── */
-.whoStrip { display: flex; gap: 16px; margin-top: 40px; height: 440px; }
-.whoStrip-item {
+/* ── Strip panel: komponen reusable (dipakai di "Nilai Kami", "Riwayat", "Tim Inti").
+   Alias .whoStrip / .stripPanel sama persis -- versi statis dari whoAccordion asli GS,
+   dengan vertical title saat collapsed (ciri khas visual desain asli) ── */
+.whoStrip, .stripPanel { display: flex; gap: 16px; margin-top: 40px; height: 440px; }
+.whoStrip-item, .stripPanel-item {
   position: relative; flex: 1; border-radius: var(--radius-md); overflow: hidden;
   cursor: pointer; background: #0d1b2a;
   transition: flex .7s cubic-bezier(.25,1,.5,1);
 }
-.whoStrip-item img {
+.whoStrip-item img, .stripPanel-item img {
   position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
   transition: transform .8s cubic-bezier(.25,1,.5,1), opacity .5s ease;
 }
-.whoStrip-item::after {
+.whoStrip-item::after, .stripPanel-item::after {
   content: ''; position: absolute; inset: 0;
   background: linear-gradient(180deg, transparent 30%, rgba(0,51,102,0.92) 100%);
   transition: opacity .5s ease;
 }
 /* judul vertikal -- tampil saat panel collapsed (state default) */
-.whoStrip-item .vttl {
+.whoStrip-item .vttl, .stripPanel-item .vttl {
   position: absolute; inset: 0; z-index: 2;
   display: flex; align-items: flex-end; justify-content: space-between;
   padding: 22px 14px;
@@ -178,45 +179,48 @@ nav .wrap { display: flex; align-items: center; justify-content: space-between; 
   opacity: 1; transform: translateY(0);
   transition: opacity .4s ease .1s, transform .4s ease .1s;
 }
-.whoStrip-item .num { writing-mode: horizontal-tb; font-size: 11px; opacity: .65; font-weight: 700; }
+.whoStrip-item .num, .stripPanel-item .num { writing-mode: horizontal-tb; font-size: 11px; opacity: .65; font-weight: 700; }
 /* konten horizontal -- tampil saat panel expanded (active/hover) */
-.whoStrip-item .inner {
+.whoStrip-item .inner, .stripPanel-item .inner {
   position: absolute; inset: 0; z-index: 3;
   display: flex; flex-direction: column; justify-content: flex-end;
   padding: 26px 20px; color: #fff;
   opacity: 0; visibility: hidden; transform: translateY(12px);
   transition: opacity .5s cubic-bezier(.25,1,.5,1), transform .5s cubic-bezier(.25,1,.5,1), visibility .5s;
 }
-.whoStrip-item .ttl { font-family: var(--display); font-weight: 800; font-size: 19px; }
-.whoStrip-item .desc { font-size: 13px; color: rgba(255,255,255,0.85); margin-top: 8px; line-height: 1.5; }
+.whoStrip-item .ttl, .stripPanel-item .ttl { font-family: var(--display); font-weight: 800; font-size: 19px; }
+.whoStrip-item .desc, .stripPanel-item .desc { font-size: 13px; color: rgba(255,255,255,0.85); margin-top: 8px; line-height: 1.5; }
 
-.whoStrip-item.active,
-.whoStrip-item:hover { flex: 3.2; }
-.whoStrip-item.active img,
-.whoStrip-item:hover img { transform: scale(1.06); }
-.whoStrip-item.active .vttl,
-.whoStrip-item:hover .vttl { opacity: 0; transform: translateY(-8px); transition-delay: 0s; }
-.whoStrip-item.active .inner,
-.whoStrip-item:hover .inner { opacity: 1; visibility: visible; transform: translateY(0); transition-delay: .15s; }
+.whoStrip-item.active, .whoStrip-item:hover,
+.stripPanel-item.active, .stripPanel-item:hover { flex: 3.2; }
+.whoStrip-item.active img, .whoStrip-item:hover img,
+.stripPanel-item.active img, .stripPanel-item:hover img { transform: scale(1.06); }
+.whoStrip-item.active .vttl, .whoStrip-item:hover .vttl,
+.stripPanel-item.active .vttl, .stripPanel-item:hover .vttl { opacity: 0; transform: translateY(-8px); transition-delay: 0s; }
+.whoStrip-item.active .inner, .whoStrip-item:hover .inner,
+.stripPanel-item.active .inner, .stripPanel-item:hover .inner { opacity: 1; visibility: visible; transform: translateY(0); transition-delay: .15s; }
 
 /* reveal saat load -- CSS animation murni, TIDAK bergantung JS/IntersectionObserver
    supaya konten selalu terjamin muncul walau JS gagal/lambat */
-.whoStrip-item {
+.whoStrip-item, .stripPanel-item {
   animation: whoReveal .6s cubic-bezier(.25,1,.5,1) both;
 }
-.whoStrip-item:nth-child(1){ animation-delay: 0s; }
-.whoStrip-item:nth-child(2){ animation-delay: .08s; }
-.whoStrip-item:nth-child(3){ animation-delay: .16s; }
-.whoStrip-item:nth-child(4){ animation-delay: .24s; }
-.whoStrip-item:nth-child(5){ animation-delay: .32s; }
+.whoStrip-item:nth-child(1), .stripPanel-item:nth-child(1){ animation-delay: 0s; }
+.whoStrip-item:nth-child(2), .stripPanel-item:nth-child(2){ animation-delay: .08s; }
+.whoStrip-item:nth-child(3), .stripPanel-item:nth-child(3){ animation-delay: .16s; }
+.whoStrip-item:nth-child(4), .stripPanel-item:nth-child(4){ animation-delay: .24s; }
+.whoStrip-item:nth-child(5), .stripPanel-item:nth-child(5){ animation-delay: .32s; }
 @keyframes whoReveal { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
 
 @media(max-width: 759px){
-  .whoStrip { flex-direction: column; height: auto; }
-  .whoStrip-item { height: 200px; }
-  .whoStrip-item .vttl { display: none; }
-  .whoStrip-item .inner { opacity: 1; visibility: visible; transform: translateY(0); }
+  .whoStrip, .stripPanel { flex-direction: column; height: auto; }
+  .whoStrip-item, .stripPanel-item { height: 200px; }
+  .whoStrip-item .vttl, .stripPanel-item .vttl { display: none; }
+  .whoStrip-item .inner, .stripPanel-item .inner { opacity: 1; visibility: visible; transform: translateY(0); }
 }
+
+/* variant 3-panel (Tim Inti) -- lebih pendek karena cuma 3 item */
+.stripPanel.strip-3 { height: 380px; }
 
 /* ── Our Business: card portrait, sesuai .businessCard asli (aspect-ratio 274/590) ── */
 .biz-grid { display: grid; gap: 20px; grid-template-columns: repeat(2,1fr); margin-top: 40px; }
@@ -228,7 +232,11 @@ nav .wrap { display: flex; align-items: center; justify-content: space-between; 
   overflow: hidden;
   text-decoration: none;
   transition: transform .3s ease;
+  animation: whoReveal .6s cubic-bezier(.25,1,.5,1) both;
 }
+.biz-card:nth-child(1){ animation-delay: 0s; }
+.biz-card:nth-child(2){ animation-delay: .1s; }
+.biz-card:nth-child(3){ animation-delay: .2s; }
 .biz-card:hover { transform: translateY(-6px); }
 .biz-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
 .biz-card:hover img { transform: scale(1.1); }

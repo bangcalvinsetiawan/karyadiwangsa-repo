@@ -174,27 +174,53 @@
   </div>
 </section>
 
-<!-- Milestones -->
+<!-- Milestones: strip 3 panel per tahun -->
 <section class="pad" id="milestones">
   <div class="wrap">
     <span class="label">Riwayat</span>
     <h2 style="margin-top:16px;font-size:clamp(24px,3.4vw,34px);max-width:22ch">Riwayat perusahaan</h2>
-    <ol class="timeline">
-      <li>
-        <span class="when">2023</span>
-        <div class="desc"><b>PT Karya Adiwangsa Sejahtera berdiri</b> dengan layanan epoxy flooring untuk pabrik dan fasilitas komersial.</div>
-      </li>
-      <li>
-        <span class="when">2024</span>
-        <div class="desc"><b>Unit F&amp;B Specialist Consultant dibentuk</b> untuk melayani klien di sektor usaha kuliner.</div>
-      </li>
-      <li>
-        <span class="when">2025</span>
-        <div class="desc"><b>Unit IT Solution dibentuk</b> — mencakup software, ERP/CRM, hingga instalasi CCTV dan akses kontrol.</div>
-      </li>
-    </ol>
+
+    <div class="stripPanel strip-3" id="milestoneStrip">
+      <div class="stripPanel-item active" data-idx="1">
+        <img src="assets/construction-worker.jpg" alt="Berdiri 2023">
+        <div class="vttl"><span>2023</span><span class="num">01</span></div>
+        <div class="inner">
+          <div class="ttl">2023 — Berdiri</div>
+          <div class="desc">PT Karya Adiwangsa Sejahtera berdiri dengan layanan epoxy flooring untuk pabrik dan fasilitas komersial.</div>
+        </div>
+      </div>
+      <div class="stripPanel-item" data-idx="2">
+        <img src="assets/fnb-kitchen.jpg" alt="Unit F&amp;B 2024">
+        <div class="vttl"><span>2024</span><span class="num">02</span></div>
+        <div class="inner">
+          <div class="ttl">2024 — Unit F&amp;B</div>
+          <div class="desc">Unit F&amp;B Specialist Consultant dibentuk untuk melayani klien di sektor usaha kuliner.</div>
+        </div>
+      </div>
+      <div class="stripPanel-item" data-idx="3">
+        <img src="assets/it-cctv.jpg" alt="Unit IT 2025">
+        <div class="vttl"><span>2025</span><span class="num">03</span></div>
+        <div class="inner">
+          <div class="ttl">2025 — Unit IT</div>
+          <div class="desc">Unit IT Solution dibentuk — mencakup software, ERP/CRM, hingga instalasi CCTV dan akses kontrol.</div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
+<script>
+(function(){
+  var strip = document.getElementById('milestoneStrip');
+  if (!strip) return;
+  var items = strip.querySelectorAll('.stripPanel-item');
+  items.forEach(function(item){
+    item.addEventListener('click', function(){
+      items.forEach(function(i){ i.classList.remove('active'); });
+      item.classList.add('active');
+    });
+  });
+})();
+</script>
 
 <!-- Company + Team -->
 <section class="pad section-pastel" id="company">
@@ -208,28 +234,47 @@
     </div>
 
     <p class="label" style="margin-top:48px;display:block">Tim Inti</p>
-    <div class="people">
-      <div class="person">
-        <span class="initials">KAS</span>
-        <span class="nm">Divisi Epoxy Flooring</span>
-        <span class="rl">Survei, aplikasi, dan quality control lapangan</span>
-        <p class="remit">Mengelola proyek dari survei lokasi sampai serah terima, termasuk garansi pasca-pengerjaan.</p>
+    <div class="stripPanel strip-3" id="teamStrip">
+      <div class="stripPanel-item active" data-idx="1">
+        <img src="assets/construction-worker.jpg" alt="Divisi Epoxy Flooring">
+        <div class="vttl"><span>Epoxy Flooring</span><span class="num">01</span></div>
+        <div class="inner">
+          <div class="ttl">Divisi Epoxy Flooring</div>
+          <div class="desc">Survei, aplikasi, dan quality control lapangan. Mengelola proyek dari survei lokasi sampai serah terima, termasuk garansi pasca-pengerjaan.</div>
+        </div>
       </div>
-      <div class="person">
-        <span class="initials">KAS</span>
-        <span class="nm">Divisi F&amp;B Consulting</span>
-        <span class="rl">Konsep, SOP, dan operasional dapur</span>
-        <p class="remit">Mendampingi klien dari perencanaan konsep sampai tim dapur berjalan sesuai SOP.</p>
+      <div class="stripPanel-item" data-idx="2">
+        <img src="assets/fnb-kitchen.jpg" alt="Divisi F&amp;B Consulting">
+        <div class="vttl"><span>F&amp;B Consulting</span><span class="num">02</span></div>
+        <div class="inner">
+          <div class="ttl">Divisi F&amp;B Consulting</div>
+          <div class="desc">Konsep, SOP, dan operasional dapur. Mendampingi klien dari perencanaan konsep sampai tim dapur berjalan sesuai SOP.</div>
+        </div>
       </div>
-      <div class="person">
-        <span class="initials">KAS</span>
-        <span class="nm">Divisi IT Solution</span>
-        <span class="rl">Software, hardware, dan instalasi keamanan</span>
-        <p class="remit">Menangani software custom, ERP/CRM, sampai instalasi CCTV dan akses kontrol on-site.</p>
+      <div class="stripPanel-item" data-idx="3">
+        <img src="assets/it-cctv.jpg" alt="Divisi IT Solution">
+        <div class="vttl"><span>IT Solution</span><span class="num">03</span></div>
+        <div class="inner">
+          <div class="ttl">Divisi IT Solution</div>
+          <div class="desc">Software, hardware, dan instalasi keamanan. Menangani software custom, ERP/CRM, sampai instalasi CCTV dan akses kontrol on-site.</div>
+        </div>
       </div>
     </div>
   </div>
 </section>
+<script>
+(function(){
+  var strip = document.getElementById('teamStrip');
+  if (!strip) return;
+  var items = strip.querySelectorAll('.stripPanel-item');
+  items.forEach(function(item){
+    item.addEventListener('click', function(){
+      items.forEach(function(i){ i.classList.remove('active'); });
+      item.classList.add('active');
+    });
+  });
+})();
+</script>
 
 <!-- Contact -->
 <section class="pad" id="contact">
