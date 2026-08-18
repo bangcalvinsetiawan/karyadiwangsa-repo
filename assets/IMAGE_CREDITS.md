@@ -9,6 +9,8 @@ komersial tanpa atribusi wajib. Dicatat di sini untuk dokumentasi internal.
 | `fnb-kitchen.jpg` | Openverse (CC0), "Restaurant Kitchen" | StockSnap | Dapur komersial profesional |
 | `it-cctv.jpg` | Openverse (CC0) | rawpixel | CCTV dome camera |
 | `hero-team.jpg` | Openverse (CC0) | StockSnap | Tim kolaborasi outdoor — hero index.html |
+| `value-planning.jpg` | Openverse (CC0), "Blueprint Plan" | StockSnap | Nilai "Survei Dulu" di strip Nilai Kami |
+| `value-professional.jpg` | Openverse (CC0), "Office Work" | StockSnap | Nilai "Profesional" di strip Nilai Kami |
 | `Logo-06.png` | Logo asli PT Karya Adiwangsa Sejahtera | - | - |
 
 Dicari via Openverse API (api.openverse.org) — aggregator resmi untuk konten

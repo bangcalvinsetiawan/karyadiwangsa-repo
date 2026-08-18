@@ -1,26 +1,30 @@
-/* PT Karya Adiwangsa Sejahtera — Design System v4
-   Diadopsi dari struktur & sistem desain gunungsewu.com (konglomerat Indonesia):
-   warna navy korporat, font Manrope/Inter, rounded corner besar, shadow lembut,
-   hero foto-manusia dengan overlay, card grid untuk unit bisnis, stat block
-   dengan ikon, section berwarna biru pastel selang-seling dengan putih.
+/* PT Karya Adiwangsa Sejahtera — Design System v5
+   Struktur diadopsi PERSIS dari HTML/CSS asli gunungsewu.com (di-scrape langsung,
+   bukan tebakan visual) -- warna dan konten 100% milik brand KAS sendiri.
+
+   Komponen baru sesuai struktur asli:
+   - .businessCard: portrait aspect-ratio 274/590, cuma nama+arrow icon
+   - .highlightsSplit: layout kiri(peta+yearsCircle) kanan(judul+teks+CTA)
+   - .whoStrip: 5 panel foto horizontal dengan judul, versi statis CSS-only
+     dari accordion asli (tanpa JS interaktif)
+   - .newsCard: rounded 20px, shadow lembut, dipertahankan dari sistem lama
+   - footer 2 kolom (logo kiri, kontak+social kanan) -- BUKAN 3 kolom+link unit
 */
 
 :root {
-  /* Token warna diekstrak langsung dari CSS variable asli gunungsewu.com */
-  --navy: #003366;        /* --secondary asli GS -- warna utama korporat */
-  --blue: #0D54B5;        /* --blue asli GS */
-  --blue-dark: #0C6A90;   /* --blue-dark asli GS */
-  --blue-light: #027CB1;  /* --blue-light asli GS */
-  --primary: #4080BF;     /* --primary asli GS -- dipakai utk aksen link/icon */
-  --pastel: #EAF2FB;      /* biru pastel utk section background selang-seling */
+  --navy: #003366;
+  --blue: #0D54B5;
+  --blue-dark: #0C6A90;
+  --blue-light: #027CB1;
+  --primary: #4080BF;
+  --pastel: #EAF2FB;
   --pastel-2: #F5F9FD;
-  --ink: #1A2B3C;          /* teks utama, bukan hitam pekat */
+  --ink: #1A2B3C;
   --body: #4A5A6A;
   --muted: #7C8B9A;
-  --rule: #E6E7EC;         /* --Base-Line asli GS */
+  --rule: #E6E7EC;
   --paper: #FFFFFF;
 
-  /* Warna aksen per unit bisnis (dipertahankan dari sistem sebelumnya) */
   --epoxy: #C87F0A;
   --fnb: #C0392B;
   --it: #0D54B5;
@@ -95,7 +99,7 @@ nav .wrap { display: flex; align-items: center; justify-content: space-between; 
 .btn.ghost { background: transparent; color: var(--navy); border: 1.5px solid var(--rule); }
 .btn.ghost:hover { border-color: var(--blue); color: var(--blue); }
 
-/* ── hero ── */
+/* ── hero (heroWrapper 94vh min 600px asli GS, disederhanakan) ── */
 .hero {
   position: relative;
   min-height: 560px;
@@ -110,57 +114,96 @@ nav .wrap { display: flex; align-items: center; justify-content: space-between; 
   content: ''; position: absolute; inset: 0;
   background: linear-gradient(180deg, rgba(0,51,102,0.15) 0%, rgba(0,51,102,0.85) 100%);
 }
-.hero-content { position: relative; z-index: 2; color: #fff; padding-block: 56px; }
-.hero-content h1 { color: #fff; font-size: clamp(2.2rem, 4.5vw, 3.4rem); max-width: 18ch; }
+.hero-content { position: relative; z-index: 2; color: #fff; padding-block: 56px; max-width: 800px; }
+.hero-content h1 { color: #fff; font-size: clamp(2.2rem, 4.5vw, 3.4rem); }
 .hero-content p { color: rgba(255,255,255,0.85); font-size: 17px; max-width: 42ch; margin-top: 18px; }
 
-/* ── stat block (rounded pastel panel, mirip "Company Highlights") ── */
-.statpanel {
-  background: var(--pastel);
-  border-radius: var(--radius-lg);
-  padding: clamp(32px, 5vw, 56px);
-  display: grid; gap: 32px;
+/* ── Company Highlights: layout split, sesuai .highlightsInner asli GS ── */
+.highlightsSplit {
+  display: grid; gap: 40px;
   grid-template-columns: 1fr;
 }
-@media(min-width: 760px){ .statpanel { grid-template-columns: repeat(3, 1fr); } }
-.stat-item { display: flex; align-items: center; gap: 16px; }
-.stat-icon {
-  width: 52px; height: 52px; border-radius: var(--radius-sm);
-  background: #fff; display: flex; align-items: center; justify-content: center;
-  box-shadow: var(--shadow-card); flex-shrink: 0;
+@media(min-width: 860px){ .highlightsSplit { grid-template-columns: minmax(0,1fr) 380px; align-items: start; } }
+.highlightsMap {
+  position: relative; min-height: 260px;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--pastel); border-radius: var(--radius-lg);
 }
-.stat-num { font-family: var(--display); font-weight: 800; font-size: 28px; color: var(--navy); }
-.stat-label { font-size: 13.5px; color: var(--muted); margin-top: 2px; }
+.highlightsMap svg { opacity: .55; width: 70%; height: auto; }
+.yearsCircle {
+  position: absolute; left: 24px; top: 50%; transform: translateY(-50%);
+  width: 168px; height: 168px; border-radius: 50%;
+  background: var(--blue); color: #fff;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 6px; text-align: center; padding: 20px;
+  box-shadow: var(--shadow-card);
+}
+.yearsCircle .years { font-family: var(--display); font-weight: 800; font-size: 22px; }
+.yearsCircle .text { font-size: 11.5px; opacity: .9; }
+.highlightsRight { display: flex; flex-direction: column; gap: 22px; justify-content: center; }
+.highlightsRight h2 { font-size: clamp(22px,3vw,30px); }
+.highlightsRight p { font-size: 14.5px; color: var(--body); }
+.statInline { display: flex; align-items: center; gap: 14px; }
+.statInline .stat-icon {
+  width: 48px; height: 48px; border-radius: var(--radius-sm);
+  background: var(--pastel); display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.statInline .stat-num { font-family: var(--display); font-weight: 800; font-size: 24px; color: var(--navy); }
+.statInline .stat-label { font-size: 13px; color: var(--muted); }
 
-/* ── business cards ── */
-.biz-grid { display: grid; gap: 20px; grid-template-columns: 1fr; }
-@media(min-width: 640px){ .biz-grid { grid-template-columns: repeat(2, 1fr); } }
-@media(min-width: 980px){ .biz-grid { grid-template-columns: repeat(3, 1fr); } }
+/* ── Who We Are: strip 5 panel (versi statis dari whoAccordion asli) ── */
+.whoStrip { display: flex; gap: 16px; margin-top: 40px; height: 420px; }
+.whoStrip-item {
+  position: relative; flex: 1; border-radius: var(--radius-md); overflow: hidden;
+  transition: flex .5s cubic-bezier(.25,1,.5,1);
+}
+.whoStrip-item img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.whoStrip-item::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(0,51,102,0.88) 100%);
+}
+.whoStrip-item .inner { position: relative; z-index: 2; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; padding: 24px 18px; color: #fff; }
+.whoStrip-item .ttl { font-family: var(--display); font-weight: 800; font-size: 16px; }
+.whoStrip-item .desc { font-size: 12.5px; color: rgba(255,255,255,0.85); margin-top: 6px; display: none; }
+@media(min-width: 760px){ .whoStrip-item:hover { flex: 2.4; } .whoStrip-item:hover .desc { display: block; } }
+@media(max-width: 759px){ .whoStrip { flex-direction: column; height: auto; } .whoStrip-item { height: 160px; } .whoStrip-item .desc { display: block; } }
+
+/* ── Our Business: card portrait, sesuai .businessCard asli (aspect-ratio 274/590) ── */
+.biz-grid { display: grid; gap: 20px; grid-template-columns: repeat(2,1fr); margin-top: 40px; }
+@media(min-width: 640px){ .biz-grid { grid-template-columns: repeat(3, 1fr); } }
 .biz-card {
   position: relative;
-  border-radius: var(--radius-md);
+  aspect-ratio: 274 / 590;
+  border-radius: 20px;
   overflow: hidden;
   text-decoration: none;
-  min-height: 280px;
-  display: flex; align-items: flex-end;
-  box-shadow: var(--shadow-card);
-  transition: transform .2s;
+  transition: transform .3s ease;
 }
 .biz-card:hover { transform: translateY(-6px); }
-.biz-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.biz-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+.biz-card:hover img { transform: scale(1.1); }
 .biz-card::after {
   content: ''; position: absolute; inset: 0;
-  background: linear-gradient(180deg, transparent 40%, rgba(0,51,102,0.92) 100%);
+  background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.8) 100%);
 }
-.biz-card-content { position: relative; z-index: 2; padding: 26px; color: #fff; }
-.biz-card-content .label { color: #BFD8F0; }
-.biz-card-content h3 { color: #fff; font-size: 20px; margin-top: 8px; }
-.biz-card-content p { color: rgba(255,255,255,0.82); font-size: 13.5px; margin-top: 8px; }
+.biz-card-arrow {
+  position: absolute; top: 18px; right: 18px; z-index: 2;
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--blue); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  transition: background .2s, color .2s;
+}
+.biz-card:hover .biz-card-arrow { background: #fff; color: var(--navy); }
+.biz-card-content {
+  position: absolute; bottom: 18px; left: 18px; right: 18px; z-index: 2;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.biz-card-content h3 { color: #fff; font-size: 17px; }
 
 /* ── pastel section wrapper ── */
 .section-pastel { background: var(--pastel-2); border-radius: var(--radius-lg); }
 
-/* ── pledge/value cards ── */
+/* ── pledge/value cards (dipertahankan, dipakai di 3 halaman unit) ── */
 .pledges { display: grid; gap: 20px; grid-template-columns: 1fr; margin-top: 32px; }
 @media(min-width: 760px){ .pledges { grid-template-columns: repeat(3, 1fr); } }
 .pledge {
@@ -181,7 +224,7 @@ nav .wrap { display: flex; align-items: center; justify-content: space-between; 
 .pledge p { font-size: 14px; color: var(--body); }
 .pledge .mech { margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--rule); font-size: 13px; color: var(--muted); }
 
-/* ── timeline ── */
+/* ── timeline (dipertahankan, dipakai di 3 halaman unit) ── */
 .timeline { list-style: none; margin: 0; padding: 0; margin-top: 32px; }
 .timeline li {
   display: grid; grid-template-columns: 90px 1fr; gap: 20px;
@@ -192,7 +235,23 @@ nav .wrap { display: flex; align-items: center; justify-content: space-between; 
 .timeline .desc { font-size: 14.5px; color: var(--body); }
 .timeline .desc b { color: var(--navy); }
 
-/* ── person card ── */
+/* ── news card (sesuai .newsCard asli GS: rounded 20px, shadow lembut) ── */
+.news-grid { display: grid; gap: 20px; grid-template-columns: 1fr; margin-top: 40px; }
+@media(min-width: 640px){ .news-grid { grid-template-columns: repeat(2, 1fr); } }
+@media(min-width: 980px){ .news-grid { grid-template-columns: repeat(3, 1fr); } }
+.newsCard {
+  display: block; text-decoration: none;
+  background: #fff; border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.04);
+  padding: 18px; transition: box-shadow .3s;
+}
+.newsCard:hover { box-shadow: var(--shadow-card); }
+.newsCard-img { height: 200px; border-radius: 16px; overflow: hidden; background: var(--pastel); }
+.newsCard-img img { width: 100%; height: 100%; object-fit: cover; }
+.newsCard-meta { display: flex; align-items: center; gap: 8px; margin-top: 20px; font-size: 12.5px; color: var(--muted); font-weight: 500; }
+.newsCard-title { font-size: 16px; font-weight: 500; color: var(--navy); margin-top: 10px; }
+
+/* ── person card (dipertahankan, dipakai di company section) ── */
 .people { display: grid; gap: 20px; grid-template-columns: 1fr; margin-top: 32px; }
 @media(min-width: 760px){ .people { grid-template-columns: repeat(3, 1fr); } }
 .person {
@@ -211,10 +270,21 @@ nav .wrap { display: flex; align-items: center; justify-content: space-between; 
 .person .rl { font-size: 12.5px; color: var(--primary); font-weight: 600; }
 .person .remit { font-size: 13.5px; color: var(--body); margin-top: 8px; }
 
-/* ── footer ── */
-footer { background: var(--navy); color: #B8C7D6; }
+/* ── footer: 2 kolom, sesuai struktur asli GS (BUKAN 3 kolom+link unit) ── */
+footer { background: var(--navy); color: #B8C7D6; margin-top: 60px; }
 footer a { color: #B8C7D6; text-decoration: none; }
 footer a:hover { color: #fff; }
+.footerInner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px; }
+.footerContact h4 { color: #8FB8DE; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 16px; }
+.footerContact p { font-size: 14px; line-height: 1.7; }
+.footerSocial { display: flex; gap: 12px; margin-top: 16px; }
+.footerSocial a {
+  width: 38px; height: 38px; border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+  display: flex; align-items: center; justify-content: center;
+}
+.footerSocial a:hover { background: rgba(255,255,255,0.16); }
+.footerBottom { border-top: 1px solid rgba(255,255,255,0.1); margin-top: 40px; padding-top: 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 12px; }
 
 /* ── fade-up animation ── */
 @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
