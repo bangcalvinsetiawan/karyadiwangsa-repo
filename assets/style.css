@@ -151,22 +151,72 @@ nav .wrap { display: flex; align-items: center; justify-content: space-between; 
 .statInline .stat-num { font-family: var(--display); font-weight: 800; font-size: 24px; color: var(--navy); }
 .statInline .stat-label { font-size: 13px; color: var(--muted); }
 
-/* ── Who We Are: strip 5 panel (versi statis dari whoAccordion asli) ── */
-.whoStrip { display: flex; gap: 16px; margin-top: 40px; height: 420px; }
+/* ── Who We Are: strip 5 panel (versi statis dari whoAccordion asli GS,
+   dengan vertical title saat collapsed -- ciri khas visual desain asli) ── */
+.whoStrip { display: flex; gap: 16px; margin-top: 40px; height: 440px; }
 .whoStrip-item {
   position: relative; flex: 1; border-radius: var(--radius-md); overflow: hidden;
-  transition: flex .5s cubic-bezier(.25,1,.5,1);
+  cursor: pointer; background: #0d1b2a;
+  transition: flex .7s cubic-bezier(.25,1,.5,1);
 }
-.whoStrip-item img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.whoStrip-item img {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+  transition: transform .8s cubic-bezier(.25,1,.5,1), opacity .5s ease;
+}
 .whoStrip-item::after {
   content: ''; position: absolute; inset: 0;
-  background: linear-gradient(180deg, transparent 40%, rgba(0,51,102,0.88) 100%);
+  background: linear-gradient(180deg, transparent 30%, rgba(0,51,102,0.92) 100%);
+  transition: opacity .5s ease;
 }
-.whoStrip-item .inner { position: relative; z-index: 2; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; padding: 24px 18px; color: #fff; }
-.whoStrip-item .ttl { font-family: var(--display); font-weight: 800; font-size: 16px; }
-.whoStrip-item .desc { font-size: 12.5px; color: rgba(255,255,255,0.85); margin-top: 6px; display: none; }
-@media(min-width: 760px){ .whoStrip-item:hover { flex: 2.4; } .whoStrip-item:hover .desc { display: block; } }
-@media(max-width: 759px){ .whoStrip { flex-direction: column; height: auto; } .whoStrip-item { height: 160px; } .whoStrip-item .desc { display: block; } }
+/* judul vertikal -- tampil saat panel collapsed (state default) */
+.whoStrip-item .vttl {
+  position: absolute; inset: 0; z-index: 2;
+  display: flex; align-items: flex-end; justify-content: space-between;
+  padding: 22px 14px;
+  color: #fff; font-family: var(--display); font-weight: 800; font-size: 15px;
+  writing-mode: vertical-rl;
+  opacity: 1; transform: translateY(0);
+  transition: opacity .4s ease .1s, transform .4s ease .1s;
+}
+.whoStrip-item .num { writing-mode: horizontal-tb; font-size: 11px; opacity: .65; font-weight: 700; }
+/* konten horizontal -- tampil saat panel expanded (active/hover) */
+.whoStrip-item .inner {
+  position: absolute; inset: 0; z-index: 3;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 26px 20px; color: #fff;
+  opacity: 0; visibility: hidden; transform: translateY(12px);
+  transition: opacity .5s cubic-bezier(.25,1,.5,1), transform .5s cubic-bezier(.25,1,.5,1), visibility .5s;
+}
+.whoStrip-item .ttl { font-family: var(--display); font-weight: 800; font-size: 19px; }
+.whoStrip-item .desc { font-size: 13px; color: rgba(255,255,255,0.85); margin-top: 8px; line-height: 1.5; }
+
+.whoStrip-item.active,
+.whoStrip-item:hover { flex: 3.2; }
+.whoStrip-item.active img,
+.whoStrip-item:hover img { transform: scale(1.06); }
+.whoStrip-item.active .vttl,
+.whoStrip-item:hover .vttl { opacity: 0; transform: translateY(-8px); transition-delay: 0s; }
+.whoStrip-item.active .inner,
+.whoStrip-item:hover .inner { opacity: 1; visibility: visible; transform: translateY(0); transition-delay: .15s; }
+
+/* reveal saat load -- CSS animation murni, TIDAK bergantung JS/IntersectionObserver
+   supaya konten selalu terjamin muncul walau JS gagal/lambat */
+.whoStrip-item {
+  animation: whoReveal .6s cubic-bezier(.25,1,.5,1) both;
+}
+.whoStrip-item:nth-child(1){ animation-delay: 0s; }
+.whoStrip-item:nth-child(2){ animation-delay: .08s; }
+.whoStrip-item:nth-child(3){ animation-delay: .16s; }
+.whoStrip-item:nth-child(4){ animation-delay: .24s; }
+.whoStrip-item:nth-child(5){ animation-delay: .32s; }
+@keyframes whoReveal { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+
+@media(max-width: 759px){
+  .whoStrip { flex-direction: column; height: auto; }
+  .whoStrip-item { height: 200px; }
+  .whoStrip-item .vttl { display: none; }
+  .whoStrip-item .inner { opacity: 1; visibility: visible; transform: translateY(0); }
+}
 
 /* ── Our Business: card portrait, sesuai .businessCard asli (aspect-ratio 274/590) ── */
 .biz-grid { display: grid; gap: 20px; grid-template-columns: repeat(2,1fr); margin-top: 40px; }

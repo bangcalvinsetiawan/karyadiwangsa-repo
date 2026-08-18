@@ -49,37 +49,42 @@
     <span class="label">Nilai Kami</span>
     <h2 style="margin-top:16px;font-size:clamp(24px,3.4vw,34px);max-width:32ch">Kami bekerja dengan standar yang sama di setiap unit bisnis.</h2>
 
-    <div class="whoStrip">
-      <div class="whoStrip-item">
+    <div class="whoStrip" id="whoStrip">
+      <div class="whoStrip-item active" data-idx="1">
         <img src="assets/value-planning.jpg" alt="Perencanaan &amp; Survei">
+        <div class="vttl"><span>Survei Dulu</span><span class="num">01</span></div>
         <div class="inner">
           <div class="ttl">Survei Dulu</div>
           <div class="desc">Setiap penawaran berdasar kondisi lapangan, bukan estimasi dari foto.</div>
         </div>
       </div>
-      <div class="whoStrip-item">
+      <div class="whoStrip-item" data-idx="2">
         <img src="assets/construction-worker.jpg" alt="Ketelitian Kerja">
+        <div class="vttl"><span>Teliti</span><span class="num">02</span></div>
         <div class="inner">
           <div class="ttl">Teliti</div>
           <div class="desc">Setiap tahap dikerjakan sesuai spesifikasi, bukan asal selesai.</div>
         </div>
       </div>
-      <div class="whoStrip-item">
+      <div class="whoStrip-item" data-idx="3">
         <img src="assets/value-professional.jpg" alt="Profesionalisme">
+        <div class="vttl"><span>Profesional</span><span class="num">03</span></div>
         <div class="inner">
           <div class="ttl">Profesional</div>
           <div class="desc">Kontrak dan garansi tertulis untuk setiap proyek yang kami kerjakan.</div>
         </div>
       </div>
-      <div class="whoStrip-item">
+      <div class="whoStrip-item" data-idx="4">
         <img src="assets/fnb-kitchen.jpg" alt="Kolaborasi Tim">
+        <div class="vttl"><span>Kolaboratif</span><span class="num">04</span></div>
         <div class="inner">
           <div class="ttl">Kolaboratif</div>
           <div class="desc">Tim lintas unit bekerja dengan standar dan koordinasi yang sama.</div>
         </div>
       </div>
-      <div class="whoStrip-item">
+      <div class="whoStrip-item" data-idx="5">
         <img src="assets/it-cctv.jpg" alt="Keandalan Sistem">
+        <div class="vttl"><span>Andal</span><span class="num">05</span></div>
         <div class="inner">
           <div class="ttl">Andal</div>
           <div class="desc">Sistem yang kami pasang dirancang untuk berjalan jangka panjang.</div>
@@ -88,43 +93,22 @@
     </div>
   </div>
 </section>
+<script>
+(function(){
+  var strip = document.getElementById('whoStrip');
+  if (!strip) return;
+  var items = strip.querySelectorAll('.whoStrip-item');
 
-<!-- Company Highlights: layout split (peta+yearsCircle kiri, teks kanan) -->
-<section class="pad section-pastel" id="highlights">
-  <div class="wrap">
-    <div class="highlightsSplit">
-      <div class="highlightsMap">
-        <svg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="40" cy="50" r="3" fill="#0D54B5"/><circle cx="55" cy="45" r="2" fill="#0D54B5"/>
-          <circle cx="70" cy="55" r="4" fill="#0D54B5"/><circle cx="85" cy="48" r="2.5" fill="#0D54B5"/>
-          <circle cx="100" cy="52" r="3" fill="#0D54B5"/><circle cx="115" cy="46" r="2" fill="#0D54B5"/>
-          <circle cx="130" cy="50" r="3.5" fill="#0D54B5"/><circle cx="145" cy="44" r="2" fill="#0D54B5"/>
-          <circle cx="160" cy="49" r="2.5" fill="#0D54B5"/>
-        </svg>
-        <div class="yearsCircle">
-          <span class="years">2023</span>
-          <span class="text">Tahun berdiri</span>
-        </div>
-      </div>
-      <div class="highlightsRight">
-        <h2>Tumbuh dari satu keahlian ke tiga unit bisnis.</h2>
-        <p>PT Karya Adiwangsa Sejahtera berkembang dari layanan epoxy flooring untuk pabrik dan gudang di Jabodetabek.</p>
-        <div class="statInline">
-          <div class="stat-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="7" height="7" rx="1.5" stroke="#0D54B5" stroke-width="1.8"/><rect x="14" y="3" width="7" height="7" rx="1.5" stroke="#0D54B5" stroke-width="1.8"/><rect x="3" y="14" width="7" height="7" rx="1.5" stroke="#0D54B5" stroke-width="1.8"/><rect x="14" y="14" width="7" height="7" rx="1.5" stroke="#0D54B5" stroke-width="1.8"/></svg>
-          </div>
-          <div>
-            <div class="stat-num">3</div>
-            <div class="stat-label">Unit bisnis terintegrasi</div>
-          </div>
-        </div>
-        <div>
-          <a href="#company" class="btn solid">Tentang Kami</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+  // Klik/tap toggle active (untuk mobile & sentuhan; desktop tetap pakai hover CSS).
+  // Reveal-animation murni CSS (@keyframes whoReveal) -- tidak bergantung JS ini.
+  items.forEach(function(item){
+    item.addEventListener('click', function(){
+      items.forEach(function(i){ i.classList.remove('active'); });
+      item.classList.add('active');
+    });
+  });
+})();
+</script>
 
 <!-- Our Business: card portrait -->
 <section class="pad" id="unit-bisnis">
