@@ -17,3 +17,29 @@ Dicari via Openverse API (api.openverse.org) — aggregator resmi untuk konten
 CC-licensed dari Flickr, Wikimedia, rawpixel, StockSnap, dll. Setiap kandidat
 diverifikasi manual (vision check) untuk pastikan tidak ada watermark atau
 logo brand pihak ketiga sebelum dipakai.
+
+## Logo Klien (assets/clients/)
+
+Diambil dari situs resmi/brand asset resmi masing-masing perusahaan (bukan
+stock photo) — dipakai sebagai social proof di section "Klien Kami" halaman
+epoxy-flooring.html, berdasarkan daftar klien di Company Profile K-Paint
+Handbook resmi PT Karya Adiwangsa Sejahtera.
+
+| File | Perusahaan | Sumber |
+|---|---|---|
+| `unilever.png` | Unilever | companieslogo.com (brand asset resmi, versi light-bg) |
+| `pertamina.png` | Pertamina EP Cepu | pertamina.com resmi |
+| `lotte-packaging.png` | PT. Lotte Packaging | lottepackaging.com resmi |
+| `chemco.png` | PT. Chemco Prima Mandiri | chemcopm.com resmi |
+| `biotis.png` | PT. Biotis Agrindo | biotis.co.id resmi |
+| `taman-anggrek.png` | Taman Anggrek Residences | tar.apartments resmi |
+| `rsud-cengkareng.png` | RSUD Cengkareng | rsudcengkareng.jakarta.go.id resmi |
+| `primera.png` | PT. Primera Panca Dwima | primera52.co.id resmi |
+| `ichii.png` | PT. Ichii Industries Indonesia | ichii-ind.com resmi |
+| `sansyu.png` | Sansyu Precision Indonesia | sansyu-pr.co.jp resmi |
+| `growtech.png` | Growtech.id | growtech.id resmi |
+| `jimco.png` | PT. Jimco Sukses Indonesia | jimco.co.id resmi |
+
+Semua logo dinormalisasi ke canvas 260x160px transparan (crop-to-content lalu
+center) via PIL untuk konsistensi ukuran di grid, ditampilkan grayscale+opacity
+di web (netral, tidak menonjolkan 1 brand).
