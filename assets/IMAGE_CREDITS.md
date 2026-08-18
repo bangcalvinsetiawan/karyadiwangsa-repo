@@ -3,11 +3,12 @@
 Semua gambar berikut berlisensi CC0 (Public Domain) atau setara — bebas dipakai
 komersial tanpa atribusi wajib. Dicatat di sini untuk dokumentasi internal.
 
-| File | Sumber | Provider | Lisensi |
+| File | Sumber | Provider | Catatan |
 |---|---|---|---|
-| `construction-worker.jpg` | Bawaan template original | - | - |
-| `fnb-kitchen.jpg` | StockSnap.io ("Restaurant Kitchen") | StockSnap | CC0 |
-| `it-cctv.jpg` | rawpixel.com (via Openverse API aggregator) | rawpixel | CC0 |
+| `construction-worker.jpg` | Openverse (CC0) | Wikimedia | Foto proses aplikasi epoxy asli |
+| `fnb-kitchen.jpg` | Openverse (CC0), "Restaurant Kitchen" | StockSnap | Dapur komersial profesional |
+| `it-cctv.jpg` | Openverse (CC0) | rawpixel | CCTV dome camera |
+| `hero-team.jpg` | Openverse (CC0) | StockSnap | Tim kolaborasi outdoor — hero index.html |
 | `Logo-06.png` | Logo asli PT Karya Adiwangsa Sejahtera | - | - |
 
 Dicari via Openverse API (api.openverse.org) — aggregator resmi untuk konten
