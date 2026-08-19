@@ -31,16 +31,31 @@
 <!-- Hero -->
 <div class="hero fade-up">
   <img src="assets/it-cctv.jpg" alt="Kamera CCTV terpasang untuk keamanan fasilitas">
-  <div class="wrap hero-content">
-    <span class="label" style="color:#A8CBEE">IT Solution</span>
-    <h1 style="margin-top:14px">Software dan sistem keamanan untuk bisnis Anda.</h1>
-    <p>Kami menangani software custom, ERP/CRM, IoT, hingga instalasi CCTV dan akses kontrol.</p>
-    <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:28px">
-      <a href="index.html#contact" class="btn solid" style="background:var(--it)">Hubungi Kami</a>
-      <a href="#layanan" class="btn ghost" style="background:rgba(255,255,255,0.1);color:#fff;border-color:rgba(255,255,255,0.3)">Lihat Layanan</a>
+  <div class="wrap hero-content" style="display:flex;flex-wrap:wrap;gap:40px;align-items:flex-end;max-width:100%">
+    <div style="flex:1;min-width:280px">
+      <span class="label" style="color:#A8CBEE">IT Solution</span>
+      <h1 style="margin-top:14px">Software dan sistem keamanan untuk bisnis Anda.</h1>
+      <p>Kami menangani software custom, ERP/CRM, IoT, hingga instalasi CCTV dan akses kontrol.</p>
+      <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:28px">
+        <a href="index.html#contact" class="btn solid" style="background:var(--it)">Hubungi Kami</a>
+        <a href="#layanan" class="btn ghost" style="background:rgba(255,255,255,0.1);color:#fff;border-color:rgba(255,255,255,0.3)">Lihat Layanan</a>
+      </div>
+    </div>
+    <div class="codeMockup" style="display:none">
+      <div class="dots"><span></span><span></span><span></span></div>
+      <div class="line"><span class="cm">// order.service.ts</span></div>
+      <div class="line"><span class="kw">async</span> processOrder(id) {</div>
+      <div class="line">  <span class="kw">const</span> pay = <span class="kw">await</span> gateway</div>
+      <div class="line">    .charge(<span class="str">"QRIS"</span>);</div>
+      <div class="line">  kitchen.<span class="kw">notify</span>(id);</div>
+      <div class="line">  <span class="kw">return</span> { status: <span class="str">"ok"</span> };</div>
+      <div class="line">}</div>
     </div>
   </div>
 </div>
+<style>
+@media(min-width: 860px){ .codeMockup { display: block !important; } }
+</style>
 
 <!-- Software & Sistem -->
 <section class="pad" id="layanan">
@@ -77,6 +92,66 @@
         <span class="pn" style="background:#E5EFFA;color:var(--it)">06</span>
         <h3>Konsultasi IT strategis</h3>
         <p>Roadmap digitalisasi bertahap sesuai kapasitas &amp; kebutuhan bisnis Anda.</p>
+      </div>
+    </div>
+
+    <div class="techStack">
+      <span class="techBadge">React</span>
+      <span class="techBadge">Node.js</span>
+      <span class="techBadge">Next.js</span>
+      <span class="techBadge">PostgreSQL</span>
+      <span class="techBadge">Flutter</span>
+      <span class="techBadge">REST API</span>
+      <span class="techBadge">Docker</span>
+      <span class="techBadge">Midtrans</span>
+      <span class="techBadge">Xendit</span>
+    </div>
+  </div>
+</section>
+
+<!-- Portfolio -->
+<section class="pad section-pastel">
+  <div class="wrap">
+    <span class="label">Portfolio</span>
+    <h2 style="margin-top:16px;font-size:clamp(24px,3.4vw,34px);max-width:24ch">Proyek yang pernah kami kerjakan</h2>
+    <p style="margin-top:14px;font-size:14.5px;color:var(--body);max-width:60ch">Sebagian sistem yang sudah kami bangun untuk klien F&amp;B dan retail — dari operasional dapur sampai pembayaran digital.</p>
+
+    <div class="portfolio-grid">
+      <div class="portfolio-card">
+        <span class="pf-tag">Software Restoran</span>
+        <h3>Sistem Manajemen Restoran End-to-End</h3>
+        <p>Aplikasi pemesanan meja, menu digital, dan laporan penjualan harian untuk operasional restoran multi-cabang.</p>
+        <div class="pf-stack"><span>React</span><span>Node.js</span><span>PostgreSQL</span></div>
+      </div>
+      <div class="portfolio-card">
+        <span class="pf-tag">Kitchen Display System</span>
+        <h3>Sistem Display Dapur Real-Time</h3>
+        <p>Layar dapur yang menerima order otomatis dari kasir, dengan status antrian dan notifikasi waktu masak per item.</p>
+        <div class="pf-stack"><span>Next.js</span><span>WebSocket</span><span>Docker</span></div>
+      </div>
+      <div class="portfolio-card">
+        <span class="pf-tag">Software Cafe</span>
+        <h3>Aplikasi Kasir &amp; Manajemen Stok Cafe</h3>
+        <p>Pencatatan penjualan, stok bahan baku, dan laporan margin per menu untuk cafe dengan sistem konsinyasi.</p>
+        <div class="pf-stack"><span>React</span><span>REST API</span><span>PostgreSQL</span></div>
+      </div>
+      <div class="portfolio-card">
+        <span class="pf-tag">POS System</span>
+        <h3>Point-of-Sale Multi-Cabang</h3>
+        <p>Sistem kasir terpusat dengan sinkronisasi stok dan laporan penjualan real-time antar cabang.</p>
+        <div class="pf-stack"><span>Flutter</span><span>Node.js</span><span>REST API</span></div>
+      </div>
+      <div class="portfolio-card">
+        <span class="pf-tag">Payment Gateway</span>
+        <h3>Integrasi Pembayaran Digital</h3>
+        <p>Integrasi QRIS, kartu debit/kredit, dan e-wallet ke sistem kasir klien untuk transaksi non-tunai.</p>
+        <div class="pf-stack"><span>Midtrans</span><span>Xendit</span><span>REST API</span></div>
+      </div>
+      <div class="portfolio-card">
+        <span class="pf-tag">ERP</span>
+        <h3>Sistem ERP Inventori &amp; Keuangan</h3>
+        <p>Platform terintegrasi untuk kelola stok, pembelian, dan laporan keuangan dalam satu dashboard.</p>
+        <div class="pf-stack"><span>Next.js</span><span>PostgreSQL</span><span>Docker</span></div>
       </div>
     </div>
   </div>
@@ -146,6 +221,15 @@
     <div class="footerInner">
       <div>
         <img src="assets/Logo-06.png" style="height:36px;filter:brightness(0) invert(1)" alt="Karya Adiwangsa Sejahtera">
+      </div>
+      <div class="footerLinks">
+        <h4>Unit Bisnis</h4>
+        <ul>
+          <li><a href="epoxy-flooring.html">Epoxy Flooring</a></li>
+          <li><a href="fnb-consulting.html">F&amp;B Consulting</a></li>
+          <li><a href="it-solution.html">IT Solution</a></li>
+          <li><a href="index.html#company">Tentang Kami</a></li>
+        </ul>
       </div>
       <div class="footerContact">
         <h4>Kontak</h4>

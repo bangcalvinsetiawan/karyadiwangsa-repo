@@ -328,12 +328,14 @@ nav .wrap { display: flex; align-items: center; justify-content: space-between; 
 .person .rl { font-size: 12.5px; color: var(--primary); font-weight: 600; }
 .person .remit { font-size: 13.5px; color: var(--body); margin-top: 8px; }
 
-/* ── footer: 2 kolom, sesuai struktur asli GS (BUKAN 3 kolom+link unit) ── */
+/* ── footer: 3 kolom (logo, quick links, kontak) ── */
 footer { background: var(--navy); color: #B8C7D6; margin-top: 60px; }
 footer a { color: #B8C7D6; text-decoration: none; }
 footer a:hover { color: #fff; }
 .footerInner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px; }
-.footerContact h4 { color: #8FB8DE; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 16px; }
+.footerLinks h4, .footerContact h4 { color: #8FB8DE; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 16px; }
+.footerLinks ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.footerLinks a { font-size: 14px; transition: color .15s; }
 .footerContact p { font-size: 14px; line-height: 1.7; }
 .footerSocial { display: flex; gap: 12px; margin-top: 16px; }
 .footerSocial a {
@@ -347,3 +349,61 @@ footer a:hover { color: #fff; }
 /* ── fade-up animation ── */
 @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
 .fade-up { animation: fadeUp .7s ease-out both; }
+
+/* ── Tech Stack badges (IT Solution only) ── */
+.techStack { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+.techBadge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: #0d1b2a; color: #A8CBEE;
+  border: 1px solid rgba(168,203,238,0.2);
+  border-radius: 999px; padding: 8px 16px;
+  font-family: 'Courier New', monospace; font-size: 12.5px; font-weight: 600;
+}
+.techBadge::before { content: '▹'; color: var(--it); }
+
+/* ── Portfolio / case study cards (IT Solution) ── */
+.portfolio-grid { display: grid; gap: 20px; grid-template-columns: 1fr; margin-top: 40px; }
+@media(min-width: 700px){ .portfolio-grid { grid-template-columns: repeat(2, 1fr); } }
+.portfolio-card {
+  background: #0d1b2a; border-radius: var(--radius-md);
+  padding: 28px; position: relative; overflow: hidden;
+  border: 1px solid rgba(168,203,238,0.12);
+}
+.portfolio-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--it), #4FC3F7);
+}
+.portfolio-card .pf-tag {
+  display: inline-block; font-family: 'Courier New', monospace; font-size: 11px;
+  color: #4FC3F7; letter-spacing: .05em; text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.portfolio-card h3 { color: #fff; font-size: 18px; }
+.portfolio-card p { color: #9CB4CC; font-size: 13.5px; margin-top: 10px; line-height: 1.65; }
+.portfolio-card .pf-stack {
+  display: flex; flex-wrap: wrap; gap: 6px; margin-top: 16px;
+  padding-top: 16px; border-top: 1px solid rgba(168,203,238,0.12);
+}
+.portfolio-card .pf-stack span {
+  font-family: 'Courier New', monospace; font-size: 11px;
+  color: #6B8AAE; background: rgba(168,203,238,0.08);
+  padding: 4px 10px; border-radius: 6px;
+}
+
+/* ── Terminal/code mockup decorative element (hero IT Solution) ── */
+.codeMockup {
+  background: #0d1b2a; border-radius: var(--radius-md);
+  padding: 20px 22px; font-family: 'Courier New', monospace; font-size: 13px;
+  border: 1px solid rgba(168,203,238,0.15);
+  box-shadow: var(--shadow-card);
+  max-width: 420px;
+}
+.codeMockup .dots { display: flex; gap: 6px; margin-bottom: 14px; }
+.codeMockup .dots span { width: 10px; height: 10px; border-radius: 50%; }
+.codeMockup .dots span:nth-child(1) { background: #FF5F56; }
+.codeMockup .dots span:nth-child(2) { background: #FFBD2E; }
+.codeMockup .dots span:nth-child(3) { background: #27C93F; }
+.codeMockup .line { color: #6B8AAE; line-height: 1.9; white-space: pre; }
+.codeMockup .line .kw { color: #4FC3F7; }
+.codeMockup .line .str { color: #A8E6A3; }
+.codeMockup .line .cm { color: #4A5A6A; }
