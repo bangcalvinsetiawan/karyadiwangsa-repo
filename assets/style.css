@@ -350,6 +350,52 @@ footer a:hover { color: #fff; }
 @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
 .fade-up { animation: fadeUp .7s ease-out both; }
 
+/* ── Scroll reveal (safe pattern): class ditambah via JS SETELAH load, jadi kalau JS gagal
+   total elemen tetap default visible (tidak pernah stuck opacity:0). Cuma section yg jauh
+   di bawah fold yg dikasih efek ini -- section awal (hero, whoStrip) sudah punya animasi
+   sendiri saat load. ── */
+.reveal-init { opacity: 0; transform: translateY(28px); transition: opacity .7s cubic-bezier(.25,1,.5,1), transform .7s cubic-bezier(.25,1,.5,1); }
+.reveal-init.reveal-in { opacity: 1; transform: translateY(0); }
+
+/* stagger utk grid/list -- container SENDIRI tetap terlihat (opacity 1), cuma anak-anaknya
+   yg animasi satu-satu. .reveal-stagger override base .reveal-init supaya container-nya
+   sendiri tidak ikut ke-hide. */
+.reveal-stagger.reveal-init { opacity: 1; transform: none; transition: none; }
+.reveal-stagger.reveal-init > * { opacity: 0; transform: translateY(20px); transition: opacity .6s cubic-bezier(.25,1,.5,1), transform .6s cubic-bezier(.25,1,.5,1), filter .3s ease; }
+.reveal-stagger.reveal-init.reveal-in > * { opacity: 1; transform: translateY(0); }
+.reveal-stagger.reveal-init.reveal-in > *:nth-child(1){ transition-delay: 0s; }
+.reveal-stagger.reveal-init.reveal-in > *:nth-child(2){ transition-delay: .08s; }
+.reveal-stagger.reveal-init.reveal-in > *:nth-child(3){ transition-delay: .16s; }
+.reveal-stagger.reveal-init.reveal-in > *:nth-child(4){ transition-delay: .24s; }
+.reveal-stagger.reveal-init.reveal-in > *:nth-child(5){ transition-delay: .32s; }
+.reveal-stagger.reveal-init.reveal-in > *:nth-child(6){ transition-delay: .40s; }
+.reveal-stagger.reveal-init.reveal-in > *:nth-child(n+7){ transition-delay: .46s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-init, .reveal-stagger.reveal-init > * { opacity: 1 !important; transform: none !important; transition: none !important; }
+}
+
+/* ── Micro-interactions: pledge card hover lift ── */
+.pledge { transition: transform .25s ease, box-shadow .25s ease; }
+.pledge:hover { transform: translateY(-4px); box-shadow: var(--shadow-card); }
+
+/* ── Client logo: opacity default di CSS (bukan inline) supaya reveal animation
+   & hover transition bisa jalan -- grayscale -> warna asli saat hover, sedikit membesar ── */
+.client-logo { opacity: .85; transition: filter .3s ease, opacity .3s ease, transform .3s ease; }
+.client-logo:hover { filter: grayscale(0); opacity: 1; transform: scale(1.05); }
+
+/* ── Nav link underline slide-in ── */
+.navlinks a { position: relative; }
+.navlinks a::after {
+  content: ''; position: absolute; left: 0; right: 100%; bottom: -6px; height: 2px;
+  background: var(--blue); transition: right .25s cubic-bezier(.25,1,.5,1);
+}
+.navlinks a:hover::after { right: 0; }
+
+/* ── CTA contact box: subtle glow on hover ── */
+#contact > .wrap > div { transition: box-shadow .3s ease; }
+#contact > .wrap > div:hover { box-shadow: 0 20px 60px rgba(0,51,102,0.35); }
+
 /* ── Tech Stack badges (IT Solution only) ── */
 .techStack { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
 .techBadge {
