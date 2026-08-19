@@ -12,11 +12,21 @@ komersial tanpa atribusi wajib. Dicatat di sini untuk dokumentasi internal.
 | `value-planning.jpg` | Openverse (CC0), "Blueprint Plan" | StockSnap | Nilai "Survei Dulu" di strip Nilai Kami |
 | `value-professional.jpg` | Openverse (CC0), "Office Work" | StockSnap | Nilai "Profesional" di strip Nilai Kami |
 | `Logo-06.png` | Logo asli PT Karya Adiwangsa Sejahtera | - | - |
+| `epoxy-industrial.jpg` | Openverse (CC0), "Industrial factory architecture" | rawpixel | Arsitektur fasilitas industrial — section Proses Kerja |
+| `epoxy-before-floor.jpg` | Openverse (CC0), "Spacious empty warehouse interior" | WordPress Photo Directory | Lantai beton sebelum epoxy — section Kenapa Epoxy |
+| `fnb-plating.jpg` | Openverse (CC0), "Chef plating shrimp dish" | rawpixel | Chef plating profesional — Layanan Konsultasi & Pledges index.html |
+| `fnb-kitchen-action.jpg` | Openverse (CC0), "Restaurant Kitchen" | StockSnap | Aktivitas dapur — section Layanan Konsultasi |
+| `fnb-cafe-display.jpg` | Openverse (CC0), "Restaurant Kitchen" (cafe display) | StockSnap | Display menu cafe — section Kenapa Kami |
+| `it-cctv-install.jpg` | Openverse (CC0), "Cctv Camera" | StockSnap | Instalasi CCTV — section Hardware & Keamanan |
+| `it-coding.jpg` | Openverse (CC0), "Coding Programming" | StockSnap | Developer coding — section Software & Sistem |
 
 Dicari via Openverse API (api.openverse.org) — aggregator resmi untuk konten
 CC-licensed dari Flickr, Wikimedia, rawpixel, StockSnap, dll. Setiap kandidat
 diverifikasi manual (vision check) untuk pastikan tidak ada watermark atau
-logo brand pihak ketiga sebelum dipakai.
+logo brand pihak ketiga sebelum dipakai. Ronde 2026-08-19: 12 kandidat
+di-vision-check, 7 lolos, 5 di-skip karena logo brand pihak ketiga
+teridentifikasi jelas (Yale forklift, D-Link/Legrand network hardware,
+Apple MacBook logo).
 
 ## Logo Klien (assets/clients/)
 
