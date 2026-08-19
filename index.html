@@ -304,6 +304,174 @@
 })();
 </script>
 
+<!-- Network: closing statement, dark section, particle network background -->
+<section class="pad">
+  <div class="wrap">
+    <div class="networkSection reveal-init" data-reveal>
+      <canvas id="networkCanvas"></canvas>
+      <div class="wrap">
+        <span class="label">Terhubung, Bukan Terpisah</span>
+        <h2 style="margin-top:16px;font-size:clamp(24px,3.4vw,34px)">Satu sistem, tiga keahlian yang saling terhubung.</h2>
+        <p>Sama seperti jaringan CCTV, sensor IoT, dan sistem akses kontrol yang kami pasang — tim kami bekerja sebagai satu jaringan, bukan tiga vendor yang berjalan sendiri-sendiri.</p>
+        <div class="netStats">
+          <div class="netStat"><div class="num" data-count="3">0</div><div class="lbl">UNIT BISNIS</div></div>
+          <div class="netStat"><div class="num" data-count="12">0</div><div class="lbl">KLIEN INDUSTRI</div></div>
+          <div class="netStat"><div class="num" data-count="2023">0</div><div class="lbl">BERDIRI SEJAK</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+(function(){
+  var canvas = document.getElementById('networkCanvas');
+  if (!canvas || !canvas.getContext) return;
+  // Respect prefers-reduced-motion: jangan jalankan animasi kalau user minta motion minimal.
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  var ctx = canvas.getContext('2d');
+  var section = canvas.parentElement;
+  var particles = [];
+  var mouse = { x: null, y: null, radius: 120 };
+  var animId = null;
+  var running = true;
+
+  function resize(){
+    canvas.width = section.offsetWidth;
+    canvas.height = section.offsetHeight;
+    initParticles();
+  }
+
+  function initParticles(){
+    var count = Math.min(70, Math.floor((canvas.width * canvas.height) / 14000));
+    particles = [];
+    for (var i = 0; i < count; i++){
+      particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        vx: (Math.random() - 0.5) * 0.35,
+        vy: (Math.random() - 0.5) * 0.35,
+        r: Math.random() * 1.5 + 1
+      });
+    }
+  }
+
+  function draw(){
+    if (!running) return;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    for (var i = 0; i < particles.length; i++){
+      var p = particles[i];
+      p.x += p.vx; p.y += p.vy;
+      if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+      if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+
+      // dorong menjauh dari cursor -- micro-interaction, subtle
+      if (mouse.x !== null){
+        var dx = p.x - mouse.x, dy = p.y - mouse.y;
+        var dist = Math.sqrt(dx*dx + dy*dy);
+        if (dist < mouse.radius){
+          var force = (mouse.radius - dist) / mouse.radius;
+          p.x += (dx / dist) * force * 1.2;
+          p.y += (dy / dist) * force * 1.2;
+        }
+      }
+
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(79, 195, 247, 0.55)';
+      ctx.fill();
+    }
+
+    // garis penghubung antar titik yang berdekatan
+    for (var a = 0; a < particles.length; a++){
+      for (var b = a + 1; b < particles.length; b++){
+        var dx2 = particles[a].x - particles[b].x;
+        var dy2 = particles[a].y - particles[b].y;
+        var d = Math.sqrt(dx2*dx2 + dy2*dy2);
+        if (d < 140){
+          ctx.beginPath();
+          ctx.moveTo(particles[a].x, particles[a].y);
+          ctx.lineTo(particles[b].x, particles[b].y);
+          ctx.strokeStyle = 'rgba(79, 195, 247,' + (0.18 * (1 - d / 140)) + ')';
+          ctx.lineWidth = 1;
+          ctx.stroke();
+        }
+      }
+    }
+
+    animId = requestAnimationFrame(draw);
+  }
+
+  section.addEventListener('mousemove', function(e){
+    var rect = canvas.getBoundingClientRect();
+    mouse.x = e.clientX - rect.left;
+    mouse.y = e.clientY - rect.top;
+  });
+  section.addEventListener('mouseleave', function(){
+    mouse.x = null; mouse.y = null;
+  });
+
+  // Pause animasi kalau section keluar viewport -- hemat CPU/battery, TIDAK bergantung ke
+  // reveal system utama (efek visual ini murni dekoratif, bukan konten yang wajib tampak).
+  // PENTING: animId di-reset ke null saat berhenti, supaya restart check (!animId) valid lagi
+  // ketika section masuk viewport lagi -- tanpa ini animasi permanen berhenti setelah 1x keluar layar.
+  if ('IntersectionObserver' in window) {
+    var perfObserver = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        running = entry.isIntersecting;
+        if (running && !animId) {
+          draw();
+        } else if (!running && animId) {
+          cancelAnimationFrame(animId);
+          animId = null;
+        }
+      });
+    }, { threshold: 0.05 });
+    perfObserver.observe(section);
+  } else {
+    // Tanpa IntersectionObserver, jalankan terus tanpa pause optimization.
+    draw();
+  }
+
+  window.addEventListener('resize', resize);
+  resize();
+
+  // Number counter -- jalan sekali saat section masuk viewport (pakai observer terpisah
+  // dari particle biar tetap jalan meski prefers-reduced-motion aktif utk particle)
+  var counters = section.querySelectorAll('[data-count]');
+  var countersStarted = false;
+  function startCounters(){
+    if (countersStarted) return;
+    countersStarted = true;
+    counters.forEach(function(el){
+      var target = parseInt(el.getAttribute('data-count'), 10);
+      var duration = 1200;
+      var startTime = null;
+      function step(ts){
+        if (!startTime) startTime = ts;
+        var progress = Math.min((ts - startTime) / duration, 1);
+        var eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = Math.floor(eased * target);
+        if (progress < 1) requestAnimationFrame(step);
+        else el.textContent = target;
+      }
+      requestAnimationFrame(step);
+    });
+  }
+  if ('IntersectionObserver' in window) {
+    var countObserver = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) { startCounters(); countObserver.disconnect(); }
+      });
+    }, { threshold: 0.3 });
+    countObserver.observe(section);
+  } else {
+    startCounters();
+  }
+})();
+</script>
+
 <!-- Contact -->
 <section class="pad" id="contact">
   <div class="wrap">
