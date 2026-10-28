@@ -1,0 +1,31 @@
+{
+  "cleanUrls": false,
+  "redirects": [
+    {
+      "source": "/epoxy-flooring.html",
+      "destination": "/#epoxy-flooring",
+      "permanent": true
+    },
+    {
+      "source": "/fnb-consulting.html",
+      "destination": "/#fnb-consulting",
+      "permanent": true
+    },
+    {
+      "source": "/it-solution.html",
+      "destination": "/#it-solution",
+      "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=604800"
+        }
+      ]
+    }
+  ]
+}
